@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg,#F3D22E); color: var(--dark,#33302B); font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, p { margin: 0; }
+  a { color: var(--dark,#33302B); text-decoration: none; }
+  a:hover { color: var(--a1,#E24C9A); }
+  @keyframes hop {
+    0%   { transform: translateY(0) rotate(var(--r,0deg)) scale(1,1); }
+    20%  { transform: translateY(1px) rotate(var(--r,0deg)) scale(1.02,0.98); }
+    50%  { transform: translateY(-11px) rotate(calc(var(--r,0deg) - 1.5deg)) scale(0.99,1.02); }
+    78%  { transform: translateY(0) rotate(var(--r,0deg)) scale(1.015,0.985); }
+    100% { transform: translateY(0) rotate(var(--r,0deg)) scale(1,1); }
+  }
+  @keyframes sway { 0%,100% { transform: translateY(0) rotate(calc(var(--r,0deg) - 1.5deg)); } 50% { transform: translateY(-10px) rotate(calc(var(--r,0deg) + 1.5deg)); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-9px) rotate(var(--r,0deg)); } }
+  @keyframes walk { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-9px) rotate(1.5deg); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+</style>
+</helmet>
+
+<div style="width:100%;background:var(--bg,#F3D22E);">
+
+<nav style="position:sticky;top:0;z-index:60;background:var(--bg,#F3D22E);">
+  <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="#top" style="flex:none;display:flex;align-items:center;"><img src="personajes/logo.png" alt="Crea tu empresa" style="height:clamp(58px,6.4vw,86px);width:auto;object-fit:contain;display:block;"></a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.8vw,24px);font-size:clamp(12px,1.1vw,14px);font-weight:700;white-space:nowrap;">
+      <a href="#about">Libro</a>
+      <a href="#capitulos">Capítulos</a>
+      <a href="#adentro">Contenido</a>
+      <a href="creadores.html">Creadores</a>
+    </div>
+    <a href="comprar.html" style="flex:none;background:var(--a1,#E24C9A);color:#FFFFFF;font-size:clamp(12px,1.1vw,14px);font-weight:800;padding:12px clamp(16px,1.8vw,24px);border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-2px);color:#FFFFFF;">Adquiere el libro</a>
+  </div>
+</nav>
+
+<section id="top" style="position:relative;padding:clamp(14px,2.4vw,32px) 28px clamp(0px,1.5vw,18px);overflow:hidden;">
+  <span style="position:absolute;left:8%;top:18%;width:14px;height:14px;background:var(--a1,#E24C9A);border-radius:50%;animation:twinkle 3.4s ease-in-out infinite;"></span>
+  <span style="position:absolute;right:12%;top:12%;width:10px;height:10px;background:var(--a2,#35AEC1);border-radius:50%;animation:twinkle 4.2s ease-in-out infinite .8s;"></span>
+  <span style="position:absolute;left:46%;top:6%;width:8px;height:8px;background:var(--a3,#F07E3C);border-radius:50%;animation:twinkle 3.8s ease-in-out infinite .4s;"></span>
+  <div style="max-width:1240px;margin:0 auto;position:relative;text-align:center;">
+    <p data-reveal="" style="display:inline-block;background:#FFFFFF;color:var(--dark,#33302B);font-size:clamp(12px,1.1vw,14px);font-weight:800;padding:9px 20px;border-radius:999px;margin-bottom:clamp(16px,2.4vw,26px);">Disfruta de leer y jugar · Chicos de 10 a 14 años</p>
+    <h1 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;letter-spacing:-.02em;line-height:.94;font-size:clamp(44px,7.6vw,112px);text-shadow:0 5px 0 rgba(0,0,0,.07);">Juega a crear tu empresa</h1>
+    <p data-reveal="" style="max-width: 48ch; margin: clamp(14px,1.8vw,20px) auto 0; font-size: clamp(16px,1.4vw,19px); font-weight: 600; line-height: 1.5; color: var(--ink2,#4A463F); text-wrap: pretty; position: relative">Aprende a crear tu negocio, administrarlo, llevar su contabilidad y cuidar tu dinero. ¿Listos para la aventura, <strong style="font-weight:800;">grandes emprendedores</strong>?</p>
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:clamp(18px,2.2vw,26px);">
+      <a href="comprar.html" style="background:var(--a1,#E24C9A);color:#FFFFFF;font-size:clamp(13px,1.2vw,15px);font-weight:800;padding:18px 32px;border-radius:999px;box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-3px);color:#FFFFFF;">Adquiere el libro completo</a>
+      <a href="#adentro" style="background:transparent;color:var(--dark,#33302B);border:2px solid var(--dark,#33302B);font-size:clamp(13px,1.2vw,15px);font-weight:800;padding:16px 30px;border-radius:999px;transition:transform .18s;" style-hover="transform:translateY(-3px);background:rgba(51,48,43,.06);">Ver páginas del libro</a>
+    </div>
+  </div>
+  <div style="position:relative;max-width:1320px;margin:clamp(10px,1.6vw,24px) auto 0;height:clamp(190px,23vw,310px);">
+    <div data-par="0.09" data-lean="46" data-char="" style="position:absolute;left:1%;bottom:0;height:92%;">
+      <img src="personajes/veterinaria.png" alt="Veterinaria" style="height:100%;object-fit:contain;transform-origin:50% 100%;--r:-4deg;animation:hop 6.2s ease-in-out infinite;">
+    </div>
+    <div data-par="0.17" data-lean="70" data-char="" style="position:absolute;left:38%;bottom:0;height:80%;">
+      <img src="personajes/pasteleria.png" alt="Pastelería" style="height:100%;object-fit:contain;transform-origin:50% 100%;--r:2deg;animation:sway 7.4s ease-in-out infinite .8s;">
+    </div>
+    <div data-par="0.05" data-lean="30" data-char="" style="position:absolute;right:30%;bottom:0;height:82%;">
+      <img src="personajes/limonada-web.png" alt="Puesto de limonada" style="height:100%;object-fit:contain;transform-origin:50% 100%;--r:0deg;animation:hop 6.8s ease-in-out infinite 1.4s;">
+    </div>
+    <div data-par="0.21" data-lean="84" data-char="" style="position:absolute;right:1%;bottom:0;height:78%;">
+      <img src="personajes/nino-laptop.png" alt="Tienda online" style="height:100%;object-fit:contain;transform-origin:50% 100%;--r:4deg;animation:sway 8s ease-in-out infinite .5s;">
+    </div>
+</div>
+</section>
+
+<div style="position:relative;background:#6B655C;overflow:hidden;padding:16px 0;">
+  <div style="position:absolute;left:0;top:0;bottom:0;width:clamp(40px,7vw,110px);background:linear-gradient(to right,#6B655C,rgba(107,101,92,0));z-index:2;pointer-events:none;"></div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:clamp(40px,7vw,110px);background:linear-gradient(to left,#6B655C,rgba(107,101,92,0));z-index:2;pointer-events:none;"></div>
+  <div style="display:flex;width:max-content;animation:marquee 34s linear infinite;font-family:'Poppins',sans-serif;font-weight:500;color:#FFFFFF;font-size:clamp(16px,1.8vw,24px);">
+    <span style="padding-right:24px;">Un libro para jugar a emprender <span style="color:var(--bg,#F3D22E);">✦</span> Crea tu proyecto <span style="color:var(--bg,#F3D22E);">✦</span> Llevar la contabilidad de la empresa <span style="color:var(--bg,#F3D22E);">✦</span> Tus finanzas y las de la empresa <span style="color:var(--bg,#F3D22E);">✦</span> Buscar financiamiento <span style="color:var(--bg,#F3D22E);">✦</span> ¿Qué es invertir? <span style="color:var(--bg,#F3D22E);">✦</span> Dejar un legado&nbsp;<span style="color:var(--bg,#F3D22E);">✦</span>&nbsp;</span>
+    <span style="padding-right:24px;">Un libro para jugar a emprender <span style="color:var(--bg,#F3D22E);">✦</span> Crea tu proyecto <span style="color:var(--bg,#F3D22E);">✦</span> Llevar la contabilidad de la empresa <span style="color:var(--bg,#F3D22E);">✦</span> Tus finanzas y las de la empresa <span style="color:var(--bg,#F3D22E);">✦</span> Buscar financiamiento <span style="color:var(--bg,#F3D22E);">✦</span> ¿Qué es invertir? <span style="color:var(--bg,#F3D22E);">✦</span> Dejar un legado&nbsp;<span style="color:var(--bg,#F3D22E);">✦</span>&nbsp;</span>
+  </div>
+</div>
+
+<section id="about" style="position:relative;background:#FFFFFF;padding:clamp(56px,8vw,110px) 28px;overflow:hidden;">
+  <div data-drift="x:-46,y:-24,rot:-5" style="position:absolute;right:2%;bottom:2%;width:clamp(96px,10vw,158px);pointer-events:none;z-index:0;"><img src="personajes/gemini-1.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 9.6s ease-in-out infinite;"></div>
+  <div data-drift="x:46,y:-24,rot:5" style="position:absolute;left:2%;bottom:2%;width:clamp(140px,15vw,240px);pointer-events:none;z-index:0;"><img src="personajes/silla-ruedas.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 10.6s ease-in-out infinite .7s;"></div>
+  <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
+    <div style="text-align:center;max-width:680px;margin:0 auto clamp(28px,4vw,44px);">
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--a1,#E24C9A);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Sobre el libro</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--dark,#33302B);line-height:1.02;font-size:clamp(32px,4.6vw,58px);">¿De qué trata?</h2>
+      <p data-reveal="" style="font-size:clamp(16px,1.35vw,19px);font-weight:600;line-height:1.6;color:var(--muted,#6B655C);margin-top:16px;text-wrap:pretty;">Imagina que tienes una idea. Una idea que puede convertirse en negocio. Tal vez vender zapatos, cuidar perros, programar un juego.</p>
+      <p data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:clamp(19px,1.9vw,25px);line-height:1.25;color:var(--dark,#33302B);margin-top:14px;">Este libro es un mapa para jugar a crear la empresa que cuando seas adulto puedas iniciar.</p>
+    </div>
+    <p data-reveal="" style="text-align:center;font-size:clamp(11px,1vw,13px);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted,#6B655C);margin-bottom:20px;">Capítulo a capítulo aprenderás a</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:clamp(28px,4vw,44px);">
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a3,#F07E3C);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:38px;height:38px;border-radius:50%;background:var(--a3,#F07E3C);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;">1</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;line-height:1.2;color:var(--dark,#33302B);">Juega a crear tu primer negocio</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a2,#35AEC1);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:38px;height:38px;border-radius:50%;background:var(--a2,#35AEC1);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;">2</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;line-height:1.2;color:var(--dark,#33302B);">Ordenar tus ideas</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a4,#7A5AA5);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:38px;height:38px;border-radius:50%;background:var(--a4,#7A5AA5);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;">3</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;line-height:1.2;color:var(--dark,#33302B);">Administrar el dinero</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a5,#93C548);border-radius:26px;padding:24px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:38px;height:38px;border-radius:50%;background:var(--a5,#93C548);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;">4</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;line-height:1.2;color:var(--dark,#33302B);">Decidir con confianza</p>
+      </div>
+    </div>
+    <div data-reveal="" style="max-width:620px;margin:0 auto;background:var(--bg,#F3D22E);border-radius:26px;padding:clamp(20px,2.4vw,28px);text-align:center;">
+      <p style="font-family:'Poppins',sans-serif;font-weight:500;font-size:clamp(16px,1.7vw,21px);line-height:1.4;color:var(--dark,#33302B);text-wrap:pretty;">"Administrarse no es cosa de grandes. Es una habilidad — y se puede aprender desde joven."</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#6B655C;padding:clamp(52px,7vw,96px) 28px;">
+  <div style="max-width:860px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center;">
+    <p style="font-size:clamp(11px,1vw,13px);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bg,#F3D22E);">Propósito</p>
+    <h2 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.05;font-size:clamp(28px,3.8vw,48px);text-wrap:balance;">Crea tu empresa nace con un propósito claro:</h2>
+    <p style="font-size:clamp(17px,1.7vw,23px);font-weight:600;line-height:1.5;color:#EFEAE0;text-wrap:pretty;">Formar niños y niñas con confianza, criterio y herramientas para construir un futuro económicamente <strong style="color:var(--bg,#F3D22E);font-weight:800;">sostenible</strong>, autónomo y comprometido con su comunidad.</p>
+  </div>
+</section>
+
+<section id="learn" style="position:relative;background:#FFFFFF;padding:clamp(56px,8vw,110px) 28px;overflow:hidden;">
+  <div style="max-width:1160px;margin:0 auto;position:relative;z-index:1;">
+    <div style="text-align:center;max-width:620px;margin:0 auto clamp(28px,4vw,48px);">
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--a1,#E24C9A);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Lo que aprenden</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--dark,#33302B);line-height:1.02;font-size:clamp(32px,4.6vw,58px);">¿Qué aprenderás?</h2>
+    </div>
+    <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.4vw,40px);margin-bottom:clamp(22px,3vw,36px);flex-wrap:wrap;">
+      <img src="personajes/financiamiento.png" alt="" style="height:clamp(96px,11vw,164px);object-fit:contain;transform-origin:50% 100%;--r:-3deg;animation:sway 7.8s ease-in-out infinite;">
+      <img src="personajes/image34.png" alt="" style="height:clamp(86px,9.5vw,142px);object-fit:contain;transform-origin:50% 100%;--r:2deg;animation:sway 8.6s ease-in-out infinite .6s;">
+      <img src="personajes/gemini-1.png" alt="" style="height:clamp(100px,11.5vw,172px);object-fit:contain;transform-origin:50% 100%;--r:-2deg;animation:hop 6.6s ease-in-out infinite .3s;">
+      <img src="personajes/nino-laptop.png" alt="" style="height:clamp(92px,10.5vw,156px);object-fit:contain;transform-origin:50% 100%;--r:3deg;animation:sway 7.2s ease-in-out infinite .9s;">
+      <img src="personajes/gemini-2.png" alt="" style="height:clamp(96px,11vw,164px);object-fit:contain;transform-origin:50% 100%;--r:-2deg;animation:hop 7.4s ease-in-out infinite 1.2s;">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;">
+      <sc-for list="{{ aprendizajes }}" as="a" hint-placeholder-count="6">
+        <div data-reveal="" style="background:#FFFFFF;border:3px solid {{ a.color }};border-radius:28px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:10px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+          <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;line-height:1.15;color:var(--dark,#33302B);">{{ a.titulo }}</h3>
+          <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);">{{ a.texto }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg,#F3D22E);padding:clamp(56px,8vw,110px) 28px;">
+  <div style="max-width:1160px;margin:0 auto;">
+    <div style="text-align:center;max-width:680px;margin:0 auto clamp(28px,4vw,48px);">
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--a1,#E24C9A);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Metodología</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.02;font-size:clamp(32px,4.6vw,58px);text-shadow:0 4px 0 rgba(0,0,0,.07);">Aprender leyendo y jugando</h2>
+      <p data-reveal="" style="font-size:clamp(16px,1.3vw,18px);font-weight:600;line-height:1.6;color:var(--ink2,#4A463F);margin-top:14px;text-wrap:pretty;">A través de la lectura y juegos interactivos, el libro convierte el aprendizaje en una aventura, acompañando a los chicos en el diseño de su primer proyecto.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:clamp(24px,3vw,36px);">
+      <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="4">
+        <div data-reveal="" style="background:#FFFFFF;border:3px solid {{ p.color }};border-radius:28px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:10px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+          <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;line-height:1;color:{{ p.color }};">{{ p.n }}</span>
+          <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;line-height:1.15;color:var(--dark,#33302B);">{{ p.titulo }}</h3>
+          <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);">{{ p.texto }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;">
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a3,#F07E3C);border-radius:26px;padding:24px;text-align:center;">
+        <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--a3,#F07E3C);">3</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-top:6px;color:var(--dark,#33302B);">Áreas integradas</p>
+        <p style="font-size:14px;font-weight:600;line-height:1.5;color:var(--muted,#6B655C);margin-top:4px;">Emprendimiento, contabilidad y finanzas&nbsp;</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a2,#35AEC1);border-radius:26px;padding:24px;text-align:center;">
+        <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--a2,#35AEC1);">6</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-top:6px;color:var(--dark,#33302B);">Capítulos con actividades</p>
+        <p style="font-size:14px;font-weight:600;line-height:1.5;color:var(--muted,#6B655C);margin-top:4px;">Con ejercicios prácticos en cada uno</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a4,#7A5AA5);border-radius:26px;padding:24px;text-align:center;">
+        <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:44px;line-height:1;color:var(--a4,#7A5AA5);">1</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;margin-top:6px;color:var(--dark,#33302B);">Proyecto propio al final</p>
+        <p style="font-size:14px;font-weight:600;line-height:1.5;color:var(--muted,#6B655C);margin-top:4px;">Construido capítulo a capítulo, desde el primero</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="adentro" style="background:#6B655C;padding:clamp(56px,8vw,110px) 28px;">
+  <div style="max-width:920px;margin:0 auto;">
+    <div style="text-align:center;max-width:620px;margin:0 auto clamp(28px,4vw,44px);">
+      <p style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--bg,#F3D22E);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Contenido del libro</p>
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.02;font-size:clamp(32px,4.6vw,58px);">Mira antes de adquirirlo</h2>
+      <p style="font-size:clamp(16px,1.3vw,18px);font-weight:600;line-height:1.6;color:#CFC9BC;margin-top:14px;">Páginas reales del libro. Ilustración original en todas, y una actividad al cierre de cada capítulo.</p>
+    </div>
+    <div style="background:#57524A;border-radius:32px;padding:clamp(14px,2vw,24px);">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--bg,#F3D22E);">
+        <img src="paginas/Slide-16_9---1.jpg" data-src="{{ paginaActual }}" alt="Página del libro" style="width:100%;height:100%;object-fit:contain;">
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;flex-wrap:wrap;">
+        <p style="font-size:14px;font-weight:700;color:#CFC9BC;">{{ paginaLabel }}</p>
+        <div style="display:flex;gap:10px;">
+          <button onClick="{{ prevPagina }}" style="background:#4A463F;border:none;color:#FFFFFF;font-family:inherit;font-size:13px;font-weight:800;padding:13px 24px;border-radius:999px;cursor:pointer;transition:transform .18s;" style-hover="transform:translateY(-2px);">Anterior</button>
+          <button onClick="{{ nextPagina }}" style="background:var(--bg,#F3D22E);border:none;color:var(--dark,#33302B);font-family:inherit;font-size:13px;font-weight:800;padding:13px 24px;border-radius:999px;cursor:pointer;transition:transform .18s;" style-hover="transform:translateY(-2px);">Siguiente página</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+        <sc-for list="{{ miniaturas }}" as="m" hint-placeholder-count="11">
+          <button onClick="{{ m.onClick }}" style="width:74px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;border:2px solid {{ m.borde }};background:none;padding:0;cursor:pointer;opacity:{{ m.opacidad }};transition:opacity .2s;" style-hover="opacity:1;">
+            <img src="paginas/Slide-16_9---1.jpg" data-src="{{ m.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="capitulos" style="position:relative;background:#FFFFFF;padding:clamp(56px,8vw,110px) 28px;overflow:hidden;">
+  <div style="max-width:1160px;margin:0 auto;position:relative;">
+    <div style="text-align:center;max-width:620px;margin:0 auto clamp(30px,4vw,52px);">
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--a1,#E24C9A);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Contenido</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--dark,#33302B);line-height:1.02;font-size:clamp(32px,4.6vw,58px);"><span style="font-weight: normal;">De idea a un proyecto de negocio, paso a paso</span></h2>
+      <p data-reveal="" style="font-size:clamp(16px,1.3vw,18px);font-weight:600;line-height:1.6;color:var(--muted,#6B655C);margin-top:14px;text-wrap:pretty;">Cada capítulo cuenta con una actividad y un juego.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;">
+      <sc-for list="{{ capitulos }}" as="c" hint-placeholder-count="6">
+        <div data-reveal="" style="background:#FFFFFF;color:var(--dark,#33302B);border:3px solid {{ c.color }};border-radius:30px;padding:clamp(22px,2.8vw,32px);display:flex;flex-direction:column;gap:16px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex:none;padding:7px 15px;border-radius:999px;background:{{ c.color }};color:#FFFFFF;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;">{{ c.numero }}</span>
+            <span style="font-size:11px;font-weight:800;letter-spacing:.1em;color:{{ c.color }};white-space:nowrap;">{{ c.estado }}</span>
+          </div>
+          <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(20px,1.9vw,25px);line-height:1.15;">{{ c.titulo }}</h3>
+          <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);text-wrap:pretty;">{{ c.bajada }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <sc-for list="{{ c.temas }}" as="t" hint-placeholder-count="4">
+              <span style="border:1.5px solid {{ c.color }};color:{{ c.color }};font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;">{{ t }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+
+<div style="background:#FFFFFF;overflow:hidden;padding:clamp(18px,2.6vw,30px) 0;">
+  <div style="display:flex;width:max-content;animation:marquee 34s linear infinite;align-items:flex-end;gap:clamp(26px,4vw,58px);padding:0 29px;">
+    <sc-for list="{{ desfile }}" as="d" hint-placeholder-count="18">
+      <img src="personajes/image34.png" data-src="{{ d.img }}" alt="" style="height:clamp(88px,11vw,146px);object-fit:contain;transform-origin:50% 100%;animation:walk {{ d.dur }} ease-in-out infinite {{ d.delay }};">
+    </sc-for>
+  </div>
+</div>
+
+<section style="position:relative;background:#FFFFFF;padding:clamp(56px,8vw,110px) 28px;overflow:hidden;">
+  <div style="max-width:1160px;margin:0 auto;position:relative;">
+    <div style="text-align:center;max-width:660px;margin:0 auto clamp(28px,4vw,48px);">
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:var(--a1,#E24C9A);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Audiencia</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:var(--dark,#33302B);line-height:1.02;font-size:clamp(32px,4.6vw,58px);">¿Para quién es?</h2>
+      <p data-reveal="" style="font-size:clamp(16px,1.3vw,18px);font-weight:600;line-height:1.6;color:var(--muted,#6B655C);margin-top:14px;text-wrap:pretty;">Pensado para hogares, escuelas y organizaciones que creen en educar y en el emprendimiento como desarrollo social.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a3,#F07E3C);border-radius:30px;padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;gap:12px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+        <span style="align-self:flex-start;background:var(--a3,#F07E3C);color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px;">Ideal para el hogar</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:var(--dark,#33302B);">Familias</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);">Padres que quieren darle a sus hijos una base sólida para prepararlos para el futuro.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a2,#35AEC1);border-radius:30px;padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;gap:12px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+        <span style="align-self:flex-start;background:var(--a2,#35AEC1);color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px;">Uso institucional</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:var(--dark,#33302B);">Escuelas y programas</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);">Instituciones educativas que buscan integrar emprendimiento y educación financiera.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:3px solid var(--a4,#7A5AA5);border-radius:30px;padding:clamp(22px,2.8vw,30px);display:flex;flex-direction:column;gap:12px;transition:transform .25s;" style-hover="transform:translateY(-6px);">
+        <span style="align-self:flex-start;background:var(--a4,#7A5AA5);color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px;">Impacto social</span>
+        <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:var(--dark,#33302B);">Organizaciones</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.6;color:var(--muted,#6B655C);">Fundaciones y programas que quieren ampliar el acceso a educación financiera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="position:relative;background:var(--bg,#F3D22E);padding:clamp(56px,8vw,100px) 28px;overflow:hidden;">
+  <div data-drift="x:70,y:-40,rot:6" style="position:absolute;left:-30px;bottom:0;width:clamp(105px,12vw,180px);pointer-events:none;z-index:0;"><img src="personajes/amigas-veterinaria.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 9.8s ease-in-out infinite;"></div>
+  <div data-drift="x:-70,y:-30,rot:-6" style="position:absolute;right:-30px;bottom:0;width:clamp(105px,12vw,180px);pointer-events:none;z-index:0;"><img src="personajes/image34.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 10.8s ease-in-out infinite .6s;"></div>
+  <div style="max-width:780px;margin:0 auto;position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center;">
+    <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.04;font-size:clamp(32px,4.8vw,62px);text-shadow:0 4px 0 rgba(0,0,0,.07);text-wrap:balance;">Darles este libro es creer en ellos.</h2>
+    <p data-reveal="" style="font-size:clamp(16px,1.4vw,19px);font-weight:600;line-height:1.6;color:var(--ink2,#4A463F);max-width:48ch;text-wrap:pretty;">En minutos, tu hijo puede estar jugando a diseñar su primera empresa.</p>
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <a href="comprar.html" style="background:var(--a1,#E24C9A);color:#FFFFFF;font-size:16px;font-weight:800;padding:20px 36px;border-radius:999px;box-shadow:0 5px 0 rgba(0,0,0,.14);transition:transform .18s;" style-hover="transform:translateY(-3px);color:#FFFFFF;">Adquiere el libro completo</a>
+    </div>
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,2.6vw,30px);font-size:14px;font-weight:700;color:var(--ink2,#4A463F);">
+      <p>Acceso inmediato</p>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#6B655C;color:#FFFFFF;padding:clamp(44px,6vw,80px) 28px clamp(24px,3vw,34px);">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,4vw,52px);align-items:end;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Que empiece el juego</h2>
+        <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">¿Eres colegio, fundación o librería? Escríbenos y armamos una propuesta por cantidad.</p>
+        <a href="mailto:libro@creatuempresa.com" style="color:var(--bg,#F3D22E);font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.com</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2.4vw,32px);font-size:15px;font-weight:400;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Libro</p>
+          <a href="#capitulos" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Capítulos</a>
+          <a href="#adentro" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Contenido</a>
+          <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Creadores</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
+          <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Digital e impreso</a>
+          <a href="mailto:libro@creatuempresa.com?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Pack aula</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Detrás</p>
+          <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Creadores</a>
+          <a href="mailto:libro@creatuempresa.com" style="color:#FFFFFF;" style-hover="color:var(--bg,#F3D22E);">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #837C71;padding-top:18px;max-width:none;">
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;"><strong style="font-weight:700;">Crea tu empresa</strong> es un libro de carácter exclusivamente educativo y didáctico. Su objetivo es acercar a niños y adolescentes conceptos básicos de emprendimiento, educación financiera, contabilidad y administración, promoviendo habilidades para la vida adulta en cuanto a creatividad y el pensamiento crítico.</p>
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;">Este libro no promueve ni incentiva el trabajo infantil. Por el contrario, reconoce y respeta el derecho de todos los niños, niñas y adolescentes a una infancia plena, al juego, a la educación y a su desarrollo integral, conforme a la legislación vigente y a la Convención sobre los Derechos del Niño.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px clamp(18px,3vw,44px);justify-content:center;text-align:center;border-top:1px solid #837C71;padding-top:20px;font-size:13px;font-weight:400;color:#D8D2C8;">
+      <p>Libro de educación financiera para chicos de 10 a 14 años</p>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;paleta&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Amarillo del libro&quot;,&quot;options&quot;:[&quot;Amarillo del libro&quot;,&quot;Crema y terracota&quot;,&quot;Turquesa y coral&quot;,&quot;Lavanda y lima&quot;,&quot;Menta y frambuesa&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Paleta&quot;},&quot;colorBG&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Paleta&quot;,&quot;options&quot;:[&quot;#F3D22E&quot;,&quot;#F6E7CE&quot;,&quot;#8FD8D2&quot;,&quot;#E3DCF5&quot;,&quot;#DDEFD8&quot;]},&quot;colorA1&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Paleta&quot;,&quot;options&quot;:[&quot;#E24C9A&quot;,&quot;#C4462F&quot;,&quot;#F0574B&quot;,&quot;#7C4DD6&quot;,&quot;#D6336C&quot;]},&quot;colorDARK&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Paleta&quot;,&quot;options&quot;:[&quot;#33302B&quot;,&quot;#2B211A&quot;,&quot;#12333B&quot;,&quot;#241E38&quot;,&quot;#1F2A22&quot;]},&quot;showImpact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;}}">
+class Component extends DCLogic {
+  state = { pagina: 0 };
+
+  paginas = [
+    { img: 'paginas/Slide-16_9---1.jpg', label: 'Tapa — Crea tu Empresa' },
+    { img: 'paginas/Slide-16_9---4.jpg', label: 'Inspiraciones de emprendimientos' },
+    { img: 'paginas/Slide-16_9---5.jpg', label: 'Un negocio puede empezar como un juego' },
+    { img: 'paginas/Slide-16_9---7.jpg', label: 'El nombre de tu idea' },
+    { img: 'paginas/Slide-16_9---120.jpg', label: 'Últimas páginas' },
+    { img: 'paginas/Slide-16_9---121.jpg', label: 'Cierre del libro' }
+  ];
+
+  paletas = {
+    'Amarillo del libro': { bg:'#F3D22E', a1:'#E24C9A', a2:'#35AEC1', a3:'#F07E3C', a4:'#7A5AA5', a5:'#93C548', dark:'#33302B', ink2:'#4A463F', muted:'#6B655C' },
+    'Crema y terracota':  { bg:'#F6E7CE', a1:'#C4462F', a2:'#2E7D74', a3:'#E08A2E', a4:'#7A4A6B', a5:'#7B9A4B', dark:'#2B211A', ink2:'#4B3B2E', muted:'#7A6A5A' },
+    'Turquesa y coral':   { bg:'#8FD8D2', a1:'#F0574B', a2:'#1F6F86', a3:'#F5A623', a4:'#5B4B8A', a5:'#4FA85B', dark:'#12333B', ink2:'#1F4A54', muted:'#4E6E75' },
+    'Lavanda y lima':     { bg:'#E3DCF5', a1:'#7C4DD6', a2:'#2F8FA8', a3:'#E4762E', a4:'#4A3B7A', a5:'#8DBF23', dark:'#241E38', ink2:'#3B3356', muted:'#6B6386' },
+    'Menta y frambuesa':  { bg:'#DDEFD8', a1:'#D6336C', a2:'#2C7A7B', a3:'#E8A33D', a4:'#6B4E9E', a5:'#5AA83C', dark:'#1F2A22', ink2:'#33473A', muted:'#5E7365' }
+  };
+
+  aplicarPaleta() {
+    const nombre = this.props.paleta ?? 'Amarillo del libro';
+    const p = this.paletas[nombre] || this.paletas['Amarillo del libro'];
+    const root = document.documentElement;
+    Object.keys(p).forEach(k => root.style.setProperty('--' + k, this.props['color' + k.toUpperCase()] || p[k]));
+    document.body.style.background = p.bg;
+  }
+
+  componentDidMount() {
+    this.aplicarPaleta();
+
+    this.autoId = setInterval(() => {
+      this.setState(s => ({ pagina: (s.pagina + 1) % this.paginas.length }));
+    }, 4200);
+
+    const vh0 = window.innerHeight || 800;
+    this.pending = [];
+    Array.from(document.querySelectorAll('[data-reveal]')).forEach(el => {
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+      if (el.getBoundingClientRect().top > vh0 * 0.9) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        this.pending.push(el);
+      }
+    });
+
+    this.chars = Array.from(document.querySelectorAll('[data-char]'));
+    this.hovering = false;
+    const showBubble = (el, on) => {
+      const b = el.querySelector('[data-bubble]');
+      if (!b) return;
+      b.style.opacity = on ? '1' : '0';
+      b.style.transform = on ? 'translate(-50%,-10px) scale(1)' : 'translate(-50%,10px) scale(.9)';
+    };
+    let turno = 0;
+    this.cicloId = setInterval(() => {
+      if (this.hovering) return;
+      this.chars.forEach(c => showBubble(c, false));
+      const el = this.chars[turno % this.chars.length];
+      turno += 1;
+      if (!el) return;
+      showBubble(el, true);
+      setTimeout(() => { if (!this.hovering) showBubble(el, false); }, 2600);
+    }, 4200);
+
+    this.chars.forEach(el => {
+      const img = el.querySelector('img');
+      el.addEventListener('pointerenter', () => { this.hovering = true; this.chars.forEach(c => showBubble(c, false)); showBubble(el, true); });
+      el.addEventListener('pointerleave', () => { this.hovering = false; showBubble(el, false); });
+      el.addEventListener('click', () => {
+        if (!img) return;
+        const keep = img.style.animation;
+        img.style.animation = 'none';
+        void img.offsetWidth;
+        img.style.animation = 'hop 1.1s ease-in-out 1';
+        setTimeout(() => { img.style.animation = keep; }, 1120);
+      });
+    });
+
+    this.parEls = Array.from(document.querySelectorAll('[data-par]'));
+    this.driftEls = Array.from(document.querySelectorAll('[data-drift]')).map(el => {
+      const cfg = {};
+      el.getAttribute('data-drift').split(',').forEach(pair => {
+        const kv = pair.split(':');
+        cfg[kv[0].trim()] = parseFloat(kv[1]);
+      });
+      return { el: el, cfg: cfg };
+    });
+
+    this.mx = 0.5; this.my = 0.5; this.smx = 0.5; this.smy = 0.5;
+    this.onMove = e => {
+      this.mx = e.clientX / (window.innerWidth || 1);
+      this.my = e.clientY / (window.innerHeight || 1);
+    };
+    window.addEventListener('pointermove', this.onMove, { passive: true });
+
+    this.syncImgs = () => {
+      Array.from(document.querySelectorAll('img[data-src]')).forEach(img => {
+        const want = img.getAttribute('data-src');
+        if (!want || want.indexOf('{{') !== -1) return;
+        if (!img.src.endsWith(want)) img.src = want;
+      });
+    };
+    this.syncImgs();
+
+    this.tick = () => {
+      const y = window.scrollY || 0;
+      const vh = window.innerHeight || 1;
+      if (this.pending.length) {
+        this.pending = this.pending.filter(el => {
+          if (el.getBoundingClientRect().top < vh * 0.9) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            return false;
+          }
+          return true;
+        });
+      }
+      this.smx += (this.mx - this.smx) * 0.07;
+      this.smy += (this.my - this.smy) * 0.07;
+      const cx = this.smx - 0.5, cy = this.smy - 0.5;
+      this.parEls.forEach(el => {
+        const s = parseFloat(el.getAttribute('data-par')) || 0;
+        const lean = (parseFloat(el.getAttribute('data-lean')) || 0) * 0.42;
+        el.style.transform = 'translate3d(' + (cx * lean) + 'px,' + (-y * s + cy * lean * 0.4) + 'px,0) rotate(' + (cx * lean * 0.12) + 'deg)';
+      });
+      this.driftEls.forEach(item => {
+        const r = item.el.getBoundingClientRect();
+        const prog = Math.max(-0.2, Math.min(1.2, 1 - (r.top + r.height * 0.5) / vh));
+        const c = item.cfg;
+        item.el.style.transform = 'translate3d(' + ((c.x || 0) * prog) + 'px,' + ((c.y || 0) * prog) + 'px,0) rotate(' + ((c.rot || 0) * prog) + 'deg)';
+      });
+      this.syncImgs();
+      this.raf = requestAnimationFrame(this.tick);
+    };
+    this.raf = requestAnimationFrame(this.tick);
+  }
+
+  reiniciarAuto() {
+    if (this.autoId) clearInterval(this.autoId);
+    this.autoId = setInterval(() => {
+      this.setState(s => ({ pagina: (s.pagina + 1) % this.paginas.length }));
+    }, 4200);
+  }
+
+  componentDidUpdate() {
+    this.aplicarPaleta();
+  }
+
+  componentWillUnmount() {
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.cicloId) clearInterval(this.cicloId);
+    if (this.autoId) clearInterval(this.autoId);
+    if (this.onMove) window.removeEventListener('pointermove', this.onMove);
+  }
+
+  renderVals() {
+    const i = this.state.pagina;
+    const pag = this.paginas[i];
+    const desfileImgs = ['personajes/image34.png', 'personajes/limonada-web.png', 'personajes/veterinaria.png', 'personajes/pasteleria.png', 'personajes/amigas-veterinaria.png', 'personajes/gemini-1.png', 'personajes/nino-laptop.png', 'personajes/gemini-2.png', 'personajes/financiamiento.png'];
+    return {
+      showImpact: this.props.showImpact ?? true,
+      paginaActual: pag.img,
+      paginaLabel: pag.label,
+      prevPagina: () => { this.reiniciarAuto(); this.setState(s => ({ pagina: (s.pagina - 1 + this.paginas.length) % this.paginas.length })); },
+      nextPagina: () => { this.reiniciarAuto(); this.setState(s => ({ pagina: (s.pagina + 1) % this.paginas.length })); },
+      miniaturas: this.paginas.map((pg, k) => ({
+        img: pg.img,
+        borde: k === i ? 'var(--bg,#F3D22E)' : 'transparent',
+        opacidad: k === i ? 1 : 0.45,
+        onClick: () => { this.reiniciarAuto(); this.setState({ pagina: k }); }
+      })),
+      desfile: desfileImgs.concat(desfileImgs).map((img, k) => ({
+        img: img,
+        dur: (5.4 + (k % 5) * 0.55).toFixed(2) + 's',
+        delay: ((k % 7) * 0.42).toFixed(2) + 's'
+      })),
+      aprendizajes: [
+        { color: 'var(--a3,#F07E3C)', titulo: 'Crear y administrar un negocio', texto: 'La alegría de crear un negocio o empresa y administrarlo con objetivos claros para un futuro próspero.' },
+        { color: 'var(--a2,#35AEC1)', titulo: 'Contabilidad para la empresa', texto: 'La importancia de llevar correctamente el flujo de caja, estado de resultados y balance de tu negocio.' },
+        { color: 'var(--a4,#7A5AA5)', titulo: 'Finanzas personales y de la empresa', texto: 'La satisfacción de un futuro organizado y próspero. Tu patrimonio y el legado que dejas.' },
+        { color: 'var(--a1,#E24C9A)', titulo: 'Responsabilidad social', texto: 'Los impuestos y el bien común. La importancia de compartir, ayudar a otros y actuar con responsabilidad social.' },
+        { color: 'var(--a5,#93C548)', titulo: 'Juegos y decisiones', texto: 'Juegos y cuestionarios interactivos que fortalecen la toma de decisiones.' },
+        { color: 'var(--a3,#F07E3C)', titulo: 'Y mucho más', texto: 'Cada capítulo trae nuevas sorpresas, desafíos y aprendizajes que no te puedes perder.' }
+      ],
+      pasos: [
+        { n: '01', color: 'var(--a3,#F07E3C)', titulo: 'Leen y conectan con su vocación', texto: 'Conceptos presentados de forma narrativa, con ejemplos de su proyecto propio.' },
+        { n: '02', color: 'var(--a2,#35AEC1)', titulo: 'Enfrentan escenarios de juego', texto: 'Precios, clientes, gastos, ganancias — situaciones inspiradas en la vida real, adaptadas a su edad.' },
+        { n: '03', color: 'var(--a1,#E24C9A)', titulo: 'Deciden y experimentan', texto: 'Cada elección tiene consecuencias dentro del libro, un lugar seguro para equivocarse.' },
+        { n: '04', color: 'var(--a5,#93C548)', titulo: 'Terminan con una empresa imaginada', texto: 'Al cerrar el libro, tienen su primer proyecto diseñado listo para el día que quieran hacerlo realidad en su adultez.' }
+      ],
+      capitulos: [
+        {
+          numero: 'Capítulo 1', estado: 'EMPIEZA ACÁ', color: 'var(--a3,#F07E3C)',
+          titulo: 'Crea tu proyecto',
+          bajada: 'Aprende qué significa emprender y cómo transformar una idea en un negocio, paso a paso.',
+          temas: ['Qué es un negocio', 'Mercado', 'Ponerle nombre a tu idea', 'Precios, ventas y registros', 'Búsqueda y liderazgo del talento', 'Comunicación con clientes'],
+          cta: 'Leer el capítulo 1', href: '#adentro', btnBg: 'var(--a3,#F07E3C)', btnFg: '#FFFFFF'
+        },
+        {
+          numero: 'Capítulo 2', estado: 'INCLUIDO', color: 'var(--a2,#35AEC1)',
+          titulo: 'Llevar la contabilidad de la empresa',
+          bajada: 'Ya imaginaste cómo se vende tu idea. Ahora es tiempo de organizar el dinero.',
+          temas: ['Qué es la contabilidad', 'Costos, gastos y otros conceptos', 'Flujo de caja', 'Estado de resultados y balance'],
+          cta: 'Incluido al comprar', href: 'comprar.html', btnBg: 'var(--dark,#33302B)', btnFg: '#FFFFFF'
+        },
+        {
+          numero: 'Capítulo 3', estado: 'INCLUIDO', color: 'var(--a1,#E24C9A)',
+          titulo: 'Tus finanzas y las de la empresa',
+          bajada: 'El dinero es una herramienta que usamos todos los días. Aprende a usarlo mejor en tu vida y en tu negocio.',
+          temas: ['Qué es el dinero y para qué sirve', 'Gastar, ahorrar, invertir y compartir', 'El presupuesto como herramienta', 'Proyecciones y pensar en el futuro'],
+          cta: 'Incluido al comprar', href: 'comprar.html', btnBg: 'var(--dark,#33302B)', btnFg: '#FFFFFF'
+        },
+        {
+          numero: 'Capítulo 4', estado: 'INCLUIDO', color: 'var(--a4,#7A5AA5)',
+          titulo: 'Buscar financiamiento',
+          bajada: 'Cuando la idea es más grande que la alcancía: pedir, devolver y entender qué significa pedir prestado.',
+          temas: ['De dónde sale la plata', 'Pedir y devolver', 'Trabajar en equipo', 'Pensar antes de decidir'],
+          cta: 'Incluido al comprar', href: 'comprar.html', btnBg: 'var(--dark,#33302B)', btnFg: '#FFFFFF'
+        },
+        {
+          numero: 'Capítulo 5', estado: 'INCLUIDO', color: 'var(--a5,#93C548)',
+          titulo: '¿Qué es invertir?',
+          bajada: 'Hacer crecer lo que ahorraste: cómo funciona invertir y por qué el tiempo juega a favor.',
+          temas: ['Instrumentos de inversión', 'Valor del dinero en el tiempo', 'Cartera de inversiones'],
+          cta: 'Incluido al comprar', href: 'comprar.html', btnBg: 'var(--dark,#33302B)', btnFg: '#FFFFFF'
+        },
+        {
+          numero: 'Capítulo 6', estado: 'INCLUIDO', color: 'var(--a3,#F07E3C)',
+          titulo: 'Dejar un legado',
+          bajada: 'Cómo cuidar y organizar lo logrado y cómo compartirlo cuando seas grande.',
+          temas: ['Cuidar el patrimonio', 'Organizar lo logrado', 'Compartir lo alcanzado'],
+          cta: 'Incluido al comprar', href: 'comprar.html', btnBg: 'var(--dark,#33302B)', btnFg: '#FFFFFF'
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

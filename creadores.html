@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&amp;family=Nunito:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F3D22E; color: #33302B; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, p { margin: 0; }
+  a { color: #33302B; text-decoration: none; }
+  a:hover { color: #E24C9A; }
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-9px) rotate(var(--r,0deg)); } }
+  @keyframes walk { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-9px) rotate(1.5deg); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+</style>
+</helmet>
+
+<div style="width:100%;background:#F3D22E;">
+
+<nav style="position:sticky;top:0;z-index:60;background:#F3D22E;">
+  <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="index.html" style="flex:none;display:flex;align-items:center;"><img src="personajes/logo.png" alt="Crea tu empresa" style="height:clamp(58px,6.4vw,86px);width:auto;object-fit:contain;display:block;"></a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.8vw,24px);font-size:clamp(12px,1.1vw,14px);font-weight:400;white-space:nowrap;">
+      <a href="index.html#about">Libro</a>
+      <a href="index.html#capitulos">Capítulos</a>
+      <a href="index.html#adentro">Contenido</a>
+      <a href="#top" style="color:#E24C9A;">Creadores</a>
+    </div>
+    <a href="comprar.html" style="flex:none;background:#E24C9A;color:#FFFFFF;font-size:clamp(12px,1.1vw,14px);font-weight:400;padding:12px clamp(16px,1.8vw,24px);border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-2px);color:#FFFFFF;">Adquiere el libro</a>
+  </div>
+</nav>
+
+<section id="top" style="position:relative;padding:clamp(28px,4vw,60px) 28px clamp(24px,3vw,44px);overflow:hidden;">
+  <span style="position:absolute;left:9%;top:26%;width:14px;height:14px;background:#E24C9A;border-radius:50%;animation:twinkle 3.4s ease-in-out infinite;"></span>
+  <span style="position:absolute;right:13%;top:18%;width:10px;height:10px;background:#35AEC1;border-radius:50%;animation:twinkle 4.2s ease-in-out infinite .8s;"></span>
+  <span style="position:absolute;left:44%;top:8%;width:8px;height:8px;background:#F07E3C;border-radius:50%;animation:twinkle 3.8s ease-in-out infinite .4s;"></span>
+  <div style="max-width:900px;margin:0 auto;position:relative;text-align:center;display:flex;flex-direction:column;gap:clamp(14px,2vw,20px);align-items:center;">
+    <p data-reveal="" style="background:#FFFFFF;font-size:clamp(11px,1vw,13px);font-weight:400;letter-spacing:.1em;text-transform:uppercase;padding:9px 20px;border-radius:999px;">Los creadores</p>
+    <h1 data-reveal="" style="font-family:'Baloo 2',cursive;font-weight:400;color:#FFFFFF;letter-spacing:-.02em;line-height:.98;font-size:clamp(38px,6.4vw,92px);text-shadow:0 5px 0 rgba(0,0,0,.07);">Quiénes hicieron este libro</h1>
+  </div>
+</section>
+
+<section style="position:relative;background:#FFFFFF;padding:clamp(48px,6.5vw,96px) 28px;overflow:hidden;">
+  <div data-drift="x:-60,y:-30,rot:-5" style="position:absolute;right:-34px;top:5%;width:clamp(100px,12vw,180px);pointer-events:none;z-index:3;"><img src="personajes/gemini-1.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 9.6s ease-in-out infinite;"></div>
+  <div data-drift="x:56,y:-34,rot:5" style="position:absolute;left:-30px;bottom:4%;width:clamp(100px,12vw,180px);pointer-events:none;z-index:3;"><img src="personajes/financiamiento.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 10.6s ease-in-out infinite .8s;"></div>
+  <div style="max-width:980px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;">
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-candelaria" shape="circle" src="creadores/creator-candelaria.webp" placeholder="Foto de Candelaria Sosa" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Candelaria Sosa</h2>
+            <span style="background:#F07E3C;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Autoría</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Desde chica jugaba a ser maestra rural con mis animales y muñecos, o a tener una juguetería con mis hermanos. Armábamos el stock, vendíamos a la familia, cobrábamos con los billetes del estanciero… Era tan divertido. A mí siempre me encantó la sección de librería. Creo en la literatura al servicio de las personas."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-agustin" shape="circle" src="creadores/creator-agustin.webp" placeholder="Foto de Agustín Sosa" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Agustín Sosa</h2>
+            <span style="background:#35AEC1;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Contabilidad</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Creo en la cultura administrativa y contable como motor del desarrollo económico y social. Porque antes de comprender el mundo financiero, primero hay que generar ingresos, cobrarlos y sostenerlos en el tiempo. Ese es el verdadero punto de partida."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-vicky" shape="circle" src="creadores/creator-vicky.webp" placeholder="Foto de Victoria Guazzone di Passalacqua" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Victoria Guazzone di Passalacqua</h2>
+            <span style="background:#F07E3C;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Edición</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Trabajar en este libro fue una forma de volver a lo esencial. A esos juegos en los que siempre queríamos ser el que vendía, el que daba el cambio, el que ponía el precio. Estoy convencida de que cuanto antes aprendemos a entender el dinero, más y mejores herramientas tenemos para elegir cómo vivir, crecer y desarrollarnos."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-mariela" shape="circle" src="creadores/creator-mariela.webp" placeholder="Foto de Mariela Rojkin" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Mariela Rojkin</h2>
+            <span style="background:#E24C9A;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Ilustración</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Este proyecto fue el puente perfecto para conectar con mi hija y su prima, mientras aprendían a colaborar y emprender. <em style="font-style:normal;font-weight:400;color:#33302B;">Creá tu empresa</em> transforma conceptos administrativos, contables y financieros en herramientas simples y prácticas. Un gran aliado para impulsar su creatividad y su confianza para el día de mañana."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-audrey" shape="circle" src="creadores/creator-audrey.webp" placeholder="Foto de Audrey Ashby" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Audrey Ashby</h2>
+            <span style="background:#93C548;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Diseño</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Ser parte de este proyecto significó para mí la posibilidad de plasmar herramientas complejas pero necesarias en un soporte cercano y accesible, para que las ideas de los más chicos no se queden solo en imaginar. A la vez, fue reconocer en la curiosidad de los chicos que ya andan inventando cosas ese impulso que alguna vez me llevó a elegir un camino independiente en el mundo laboral."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-pedro" shape="circle" src="creadores/creator-pedro.webp" placeholder="Foto de Pedro Flores" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Pedro Flores</h2>
+            <span style="background:#7A5AA5;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Animación</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Diseñar este proyecto fue una forma de ayudar a que más ideas encuentren cómo hacerse realidad. Nunca tuvimos un poder tan grande para dar forma a nuestro mundo como el que tenemos hoy. La educación y la tecnología juntas son una gran fuerza para el bien y un mundo mejor."</p>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
+        <image-slot id="creator-agustin-catino" shape="circle" src="creadores/creator-agustin-catino.webp" placeholder="Foto de Agustín Catino" style="width:96px;height:96px;display:block;"></image-slot>
+        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Agustín Catino</h2>
+            <span style="background:#35AEC1;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Marketing</span>
+          </div>
+          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Siempre me apasionó crear proyectos que ayuden a las personas a crecer. Participar en este libro es una forma de acercar el mundo del emprendimiento a los más chicos, despertando su curiosidad, creatividad y confianza para animarse a construir sus propias ideas."</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<div style="background:#6B655C;overflow:hidden;padding:clamp(16px,2.4vw,26px) 0;">
+  <div style="display:flex;width:max-content;animation:marquee 40s linear infinite;align-items:flex-end;gap:clamp(26px,4vw,54px);padding:0 27px;">
+    <sc-for list="{{ desfile }}" as="d" hint-placeholder-count="18">
+      <img src="personajes/image34.png" data-src="{{ d.img }}" alt="" style="height:clamp(78px,9vw,124px);object-fit:contain;transform-origin:50% 100%;animation:walk {{ d.dur }} ease-in-out infinite {{ d.delay }};">
+    </sc-for>
+  </div>
+</div>
+
+<section style="position:relative;background:#35AEC1;padding:clamp(28px,3.5vw,48px) 28px 0;overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(140px,1fr) minmax(300px,2.6fr) minmax(150px,1.05fr);gap:clamp(10px,2vw,32px);align-items:end;">
+    <div data-drift="x:26,y:-10,rot:3" style="pointer-events:none;align-self:end;width:min(100%,270px);"><img src="personajes/gemini-2.png" alt="" style="width:100%;object-fit:contain;display:block;--r:0deg;animation:floaty 10s ease-in-out infinite;"></div>
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,1.8vw,20px);padding-bottom:clamp(18px,2.5vw,34px);">
+      <p data-reveal="" style="font-size:clamp(11px,1vw,13px);font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.8;">Por qué lo hicimos</p>
+      <h2 data-reveal="" style="font-family:'Baloo 2',cursive;font-weight:400;color:#FFFFFF;line-height:1.04;font-size:clamp(26px,3.4vw,46px);text-wrap:balance;">Porque este es el libro que nos hubiera gustado tener de chicos.</h2>
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:56ch;">
+        <p style="font-size:clamp(15px,1.2vw,17px);font-weight:400;line-height:1.7;color:#EAF7F9;text-wrap:pretty;">Este libro nace al observar que muchos jóvenes llegan a la mayoría de edad sin las herramientas necesarias para dar sus primeros pasos en el mundo del trabajo o para emprender.</p>
+        <p style="font-size:clamp(15px,1.2vw,17px);font-weight:400;line-height:1.7;color:#EAF7F9;text-wrap:pretty;">Creemos que brindar estas herramientas desde temprana edad permite que más chicos, cuando les toque, puedan emprender con confianza y construir un futuro con mayores oportunidades.</p>
+      </div>
+    </div>
+    <div data-drift="x:-26,y:-10,rot:-3" style="pointer-events:none;align-self:end;justify-self:end;width:min(100%,290px);"><img src="personajes/compras-necesidad.png" alt="" style="width:100%;object-fit:contain;display:block;--r:20deg;animation:floaty 11s ease-in-out infinite .5s;"></div>
+  </div>
+</section>
+
+<section style="position:relative;background:#F3D22E;padding:clamp(48px,6.5vw,92px) 28px;overflow:hidden;">
+  <div data-drift="x:56,y:-36,rot:5" style="position:absolute;left:-6px;bottom:0;width:clamp(100px,11.5vw,178px);pointer-events:none;"><img src="personajes/image34.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 9.8s ease-in-out infinite;"></div>
+  <div data-drift="x:-56,y:-30,rot:-5" style="position:absolute;right:-26px;bottom:0;width:clamp(140px,16vw,250px);pointer-events:none;"><img src="personajes/amigas-veterinaria.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 10.8s ease-in-out infinite .6s;"></div>
+  <div style="max-width:720px;margin:0 auto;position:relative;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center;">
+    <h2 data-reveal="" style="font-family:'Baloo 2',cursive;font-weight:400;color:#FFFFFF;line-height:1.02;font-size:clamp(30px,4.4vw,56px);text-shadow:0 4px 0 rgba(0,0,0,.07);">¿Arrancamos el juego del primer negocio?</h2>
+    <p data-reveal="" style="font-size:clamp(16px,1.3vw,19px);font-weight:400;line-height:1.6;color:#4A463F;max-width:42ch;">Seis capítulos, un sinfín de inspiraciones de emprendimientos y un proyecto propio diseñado al terminar de leerlo.</p>
+    <a data-reveal="" href="comprar.html" style="background:#E24C9A;color:#FFFFFF;font-size:16px;font-weight:400;padding:21px 38px;border-radius:999px;box-shadow:0 5px 0 rgba(0,0,0,.14);transition:transform .18s;" style-hover="transform:translateY(-3px);color:#FFFFFF;">Adquirir el libro</a>
+  </div>
+</section>
+
+<footer style="background:#6B655C;color:#FFFFFF;padding:clamp(44px,6vw,80px) 28px clamp(24px,3vw,34px);">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,4vw,52px);align-items:end;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Que empiece el juego</h2>
+        <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">¿Eres colegio, fundación o librería? Escríbenos y armamos una propuesta por cantidad.</p>
+        <a href="mailto:libro@creatuempresa.com" style="color:#F3D22E;font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.com</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2.4vw,32px);font-size:15px;font-weight:400;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Libro</p>
+          <a href="index.html#capitulos" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Capítulos</a>
+          <a href="index.html#adentro" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contenido</a>
+          <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
+          <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Digital e impreso</a>
+          <a href="mailto:libro@creatuempresa.com?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Detrás</p>
+          <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
+          <a href="mailto:libro@creatuempresa.com" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #837C71;padding-top:18px;max-width:none;">
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;"><strong style="font-weight:700;">Crea tu empresa</strong> es un libro de carácter exclusivamente educativo y didáctico. Su objetivo es acercar a niños y adolescentes conceptos básicos de emprendimiento, educación financiera, contabilidad y administración, promoviendo habilidades para la vida adulta en cuanto a creatividad y el pensamiento crítico.</p>
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;">Este libro no promueve ni incentiva el trabajo infantil. Por el contrario, reconoce y respeta el derecho de todos los niños, niñas y adolescentes a una infancia plena, al juego, a la educación y a su desarrollo integral, conforme a la legislación vigente y a la Convención sobre los Derechos del Niño.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px clamp(18px,3vw,44px);justify-content:center;text-align:center;border-top:1px solid #837C71;padding-top:20px;font-size:13px;font-weight:400;color:#D8D2C8;">
+      <p>Libro de educación financiera para chicos de 10 a 14 años</p>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const vh0 = window.innerHeight || 800;
+    this.pending = [];
+    Array.from(document.querySelectorAll('[data-reveal]')).forEach(el => {
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+      if (el.getBoundingClientRect().top > vh0 * 0.9) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        this.pending.push(el);
+      }
+    });
+
+    this.driftEls = Array.from(document.querySelectorAll('[data-drift]')).map(el => {
+      const cfg = {};
+      el.getAttribute('data-drift').split(',').forEach(pair => {
+        const kv = pair.split(':');
+        cfg[kv[0].trim()] = parseFloat(kv[1]);
+      });
+      return { el: el, cfg: cfg };
+    });
+
+
+    this.syncImgs = () => {
+      Array.from(document.querySelectorAll('img[data-src]')).forEach(img => {
+        const want = img.getAttribute('data-src');
+        if (want && want.indexOf('{{') === -1 && !img.src.endsWith(want)) img.src = want;
+      });
+    };
+    this.syncImgs();
+
+    this.tick = () => {
+      const vh = window.innerHeight || 1;
+      if (this.pending.length) {
+        this.pending = this.pending.filter(el => {
+          if (el.getBoundingClientRect().top < vh * 0.9) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            return false;
+          }
+          return true;
+        });
+      }
+      this.driftEls.forEach(item => {
+        const r = item.el.getBoundingClientRect();
+        const prog = Math.max(-0.2, Math.min(1.2, 1 - (r.top + r.height * 0.5) / vh));
+        const c = item.cfg;
+        item.el.style.transform = 'translate3d(' + ((c.x || 0) * prog) + 'px,' + ((c.y || 0) * prog) + 'px,0) rotate(' + ((c.rot || 0) * prog) + 'deg)';
+      });
+      this.syncImgs();
+      this.raf = requestAnimationFrame(this.tick);
+    };
+    this.raf = requestAnimationFrame(this.tick);
+  }
+
+  componentWillUnmount() {
+    if (this.raf) cancelAnimationFrame(this.raf);
+  }
+
+  renderVals() {
+    const desfileImgs = ['personajes/image34.png', 'personajes/cortando-pasto-web.png', 'personajes/veterinaria.png', 'personajes/pasteleria.png', 'personajes/amigas-veterinaria.png', 'personajes/gemini-1.png', 'personajes/nino-laptop.png', 'personajes/gemini-2.png', 'personajes/financiamiento.png'];
+    return {
+      desfile: desfileImgs.concat(desfileImgs).map((img, k) => ({
+        img: img,
+        dur: (5.4 + (k % 5) * 0.55).toFixed(2) + 's',
+        delay: ((k % 7) * 0.42).toFixed(2) + 's'
+      })),
+      creadores: this.conFoto([
+        { slot: 'creator-candelaria', name: 'Candelaria Sosa', role: 'Autoría', color: '#F07E3C', em: '', quote2: '',
+          quote: '"Desde chica jugaba a ser maestra rural con mis animales y muñecos, o a tener una juguetería con mis hermanos. Armábamos el stock, vendíamos a la familia, cobrábamos con los billetes del estanciero… Era tan divertido. A mí siempre me encantó la sección de librería. Creo en la literatura al servicio de las personas."' },
+        { slot: 'creator-agustin', name: 'Agustín Sosa', role: 'Contabilidad', color: '#35AEC1', em: '', quote2: '',
+          quote: '"Creo en la cultura administrativa y contable como motor del desarrollo económico y social. Porque antes de comprender el mundo financiero, primero hay que generar ingresos, cobrarlos y sostenerlos en el tiempo. Ese es el verdadero punto de partida. Es muy bueno enseñarles jugando desde la niñez."' },
+        { slot: 'creator-vicky', name: 'Victoria Guazzone di Passalacqua', role: 'Edición', color: '#F07E3C', em: '', quote2: '',
+          quote: '"Trabajar en este libro fue una forma de volver a lo esencial. A esos juegos en los que siempre queríamos ser el que vendía, el que daba el cambio, el que ponía el precio. Estoy convencida de que cuanto antes aprendemos a entender el dinero, más y mejores herramientas tenemos para elegir cómo vivir, crecer y desarrollarnos."' },
+        { slot: 'creator-mariela', name: 'Mariela Rojkin', role: 'Ilustración', color: '#E24C9A',
+          quote: '"Este proyecto fue el puente perfecto para conectar con mi hija y su prima, mientras aprendían a colaborar y emprender. ',
+          em: 'Crea tu empresa',
+          quote2: ' transforma conceptos administrativos, contables y financieros en herramientas simples y prácticas. Un gran aliado para impulsar su creatividad y su confianza para el día de mañana."' },
+        { slot: 'creator-audrey', name: 'Audrey Ashby', role: 'Diseño', color: '#93C548', em: '', quote2: '',
+          quote: '"Ser parte de este proyecto significó para mí la posibilidad de plasmar herramientas complejas pero necesarias en un soporte cercano y accesible, para que las ideas de los más chicos no se queden solo en imaginar. A la vez, fue reconocer en la curiosidad de los chicos que ya andan inventando cosas ese impulso que alguna vez me llevó a elegir un camino independiente en el mundo laboral."' },
+        { slot: 'creator-pedro', name: 'Pedro Flores', role: 'Animación', color: '#7A5AA5', em: '', quote2: '',
+          quote: '"Diseñar este proyecto fue una forma de ayudar a que más ideas encuentren cómo hacerse realidad. Nunca tuvimos un poder tan grande para dar forma a nuestro mundo como el que tenemos hoy. La educación y la tecnología juntas son una gran fuerza para el bien y un mundo mejor."' },
+        { slot: 'creator-agustin-catino', name: 'Agustín Catino', role: 'Marketing', color: '#35AEC1', em: '', quote2: '',
+          quote: '"Siempre me apasionó crear proyectos que ayuden a las personas a crecer. Participar en este libro es una forma de acercar el mundo del emprendimiento a los más chicos, despertando su curiosidad, creatividad y confianza para animarse a construir sus propias ideas."' },
+      ])
+    };
+  }
+
+  conFoto(lista) {
+    const crops = {
+      'creator-candelaria': { s: 1, x: 0, y: 0.526 },
+      'creator-agustin': { s: 1.1527, x: 1.179, y: 5.796 },
+      'creator-audrey': { s: 1, x: 0, y: 0 },
+      'creator-pedro': { s: 1, x: 0, y: 0 },
+      'creator-vicky': { s: 1.3383, x: 5.815, y: 42.039 },
+      'creator-mariela': { s: 2.0818, x: -28.61, y: 21.43 },
+      'creator-agustin-catino': { s: 1.0536, x: -15.573, y: -2.682 }
+    };
+    return lista.map(c => {
+      const k = crops[c.slot] || { s: 1, x: 0, y: 0 };
+      return Object.assign({
+        foto: 'creadores/' + c.slot + '.webp',
+        w: (100 * k.s).toFixed(3) + '%',
+        left: 'calc(50% + ' + k.x.toFixed(3) + '%)',
+        top: 'calc(50% + ' + k.y.toFixed(3) + '%)'
+      }, c);
+    });
+  }
+}
+</script>
+</body>
+</html>
