@@ -34,6 +34,29 @@
   @keyframes walk { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-9px) rotate(1.5deg); } }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+
+  @media (max-width:860px) {
+    html, body { overflow-x: hidden; }
+    section, footer { padding-left: 18px !important; padding-right: 18px !important; }
+    nav > div { padding: 10px 16px !important; gap: 10px !important; }
+    nav img { height: 42px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    footer div[style*="minmax(120px"] { grid-template-columns: repeat(2, 1fr) !important; gap: 22px 18px !important; }
+    footer > div > div:last-child { justify-content: center !important; text-align: center !important; }
+  }
+  @media (max-width:640px) {
+    nav > div > div { display: none !important; }
+  }
+
+  @media (max-width:860px) {
+    #top > div:last-child { height: auto !important; display: flex !important; align-items: flex-end !important; justify-content: center !important; gap: 0 !important; margin-top: 18px !important; }
+    #top > div:last-child > [data-char] { position: static !important; height: auto !important; transform: none !important; }
+    #top > div:last-child > [data-char] img { height: clamp(76px,24vw,120px) !important; }
+    #about > div[data-drift] { width: 84px !important; opacity: .55 !important; }
+    section > div[data-drift] { width: 96px !important; }
+    #adentro div[style*="border-radius:32px"] { border-radius: 22px !important; padding: 12px !important; }
+    #adentro button[style*="74px"] { width: 56px !important; }
+  }
 </style>
 </helmet>
 
