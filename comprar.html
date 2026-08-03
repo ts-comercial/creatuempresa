@@ -138,7 +138,7 @@
       <div style="display:flex;flex-direction:column;gap:14px;">
         <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Que empiece el juego</h2>
         <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">¿Eres colegio, fundación o librería? Escríbenos y armamos una propuesta por cantidad.</p>
-        <a href="mailto:libro@creatuempresa.com" style="color:#F3D22E;font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.com</a>
+        <a href="mailto:libro@creatuempresa.ai" style="color:#F3D22E;font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.ai</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2.4vw,32px);font-size:15px;font-weight:400;">
         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -150,12 +150,12 @@
         <div style="display:flex;flex-direction:column;gap:10px;">
           <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
           <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Digital e impreso</a>
-          <a href="mailto:libro@creatuempresa.com?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
+          <a href="mailto:libro@creatuempresa.ai?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Detrás</p>
           <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
-          <a href="mailto:libro@creatuempresa.com" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contacto</a>
+          <a href="mailto:libro@creatuempresa.ai" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contacto</a>
         </div>
       </div>
     </div>
@@ -250,14 +250,14 @@ class Component extends DCLogic {
           precio: 'USD ' + (p.precioDigital ?? 15),
           detalle: 'PDF y ePub para leer en tablet o computadora, con las actividades imprimibles.',
           cta: 'Comprar con Stripe', nota: 'Pago seguro con Stripe',
-          href: p.linkStripe || 'mailto:libro@creatuempresa.com?subject=Libro%20digital'
+          href: p.linkStripe || 'mailto:libro@creatuempresa.ai?subject=Libro%20digital'
         },
         {
           nombre: 'Pack aula', tag: 'Desde 10 ejemplares', color: '#7A5AA5',
           precio: 'Consultar',
           detalle: 'Precio por ejemplar con descuento por cantidad para colegios y organizaciones.',
           cta: 'Pedir propuesta', nota: 'Te respondemos el mismo día',
-          href: 'mailto:libro@creatuempresa.com?subject=Pack%20aula'
+          href: 'mailto:libro@creatuempresa.ai?subject=Pack%20aula'
         }
       ],
       faqs: [
