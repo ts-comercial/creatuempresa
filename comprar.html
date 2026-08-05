@@ -40,6 +40,7 @@
     nav > div > div { display: none !important; }
   }
 </style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#F3D22E"/><text x="30" y="115" font-size="60" font-family="sans-serif" fill="#33302B">CTE</text></svg></template>
 </helmet>
 
 <div style="width:100%;background:#F3D22E;">
@@ -64,7 +65,7 @@
     <div style="text-align:center;max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
       <p style="align-self:center;background:#FFFFFF;font-size:clamp(11px,1vw,13px);font-weight:800;padding:9px 18px;border-radius:999px;">Libro para chicos de 10 a 14 años</p>
       <h1 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;letter-spacing:-.02em;line-height:1;font-size:clamp(36px,5.2vw,68px);text-shadow:0 4px 0 rgba(0,0,0,.07);">Elige tu formato</h1>
-      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:600;line-height:1.55;color:#4A463F;text-wrap:pretty;">El mismo libro, tres maneras de tenerlo. Elige el formato y te llevamos directo al lugar de compra.</p>
+      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:600;line-height:1.55;color:#4A463F;text-wrap:pretty;">Elige el plan que mejor te queda y te llevamos directo al lugar de compra.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(14px,2vw,24px);align-items:stretch;">
       <sc-for list="{{ opciones }}" as="o" hint-placeholder-count="3">
@@ -149,7 +150,7 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
-          <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Digital e impreso</a>
+          <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Planes</a>
           <a href="mailto:libro@creatuempresa.ai?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
@@ -172,7 +173,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;linkAmazon&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;linkStripe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;precioImpreso&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:35,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;},&quot;precioDigital&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;linkStripe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;precioDigital&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;},&quot;precioAnual&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:75,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
     this.io = new IntersectionObserver(entries => {
@@ -239,32 +240,32 @@ class Component extends DCLogic {
       })),
       opciones: [
         {
-          nombre: 'Libro impreso', tag: 'Disfrutar de leer en papel ', color: '#E24C9A',
-          precio: 'USD ' + (p.precioImpreso ?? 35),
-          detalle: 'Tapa dura, full color, para escribir sobre el libro. Ilustrado a mano en todas sus páginas.',
-          cta: 'Adquirir en Amazon', nota: 'Compra y envío gestionados por Amazon',
-          href: p.linkAmazon || 'https://www.amazon.com'
+          nombre: 'Digital', tag: 'Llega al instante', color: '#35AEC1',
+          precio: 'USD ' + (p.precioDigital ?? 10) + ' / mes',
+          detalle: 'Acceso mensual al libro digital y sus actividades. Más impuestos.',
+          cta: 'Comprar ahora', nota: 'Pago seguro',
+          href: 'mailto:libro@creatuempresa.ai?subject=Digital%20mensual'
         },
         {
-          nombre: 'Libro digital', tag: 'Llega al instante', color: '#35AEC1',
-          precio: 'USD ' + (p.precioDigital ?? 15),
-          detalle: 'PDF y ePub para leer en tablet o computadora, con las actividades imprimibles.',
-          cta: 'Comprar con Stripe', nota: 'Pago seguro con Stripe',
-          href: p.linkStripe || 'mailto:libro@creatuempresa.ai?subject=Libro%20digital'
+          nombre: 'Anual', tag: 'El mejor precio', color: '#E24C9A',
+          precio: 'USD ' + (p.precioAnual ?? 75),
+          detalle: 'Un año completo de acceso al libro digital y sus actividades.',
+          cta: 'Comprar ahora', nota: 'Pago seguro',
+          href: 'mailto:libro@creatuempresa.ai?subject=Acceso%20anual'
         },
         {
-          nombre: 'Pack aula', tag: 'Desde 10 ejemplares', color: '#7A5AA5',
+          nombre: 'Pack aula', tag: 'Colegios y organizaciones', color: '#7A5AA5',
           precio: 'Consultar',
-          detalle: 'Precio por ejemplar con descuento por cantidad para colegios y organizaciones.',
+          detalle: 'Precio por alumno con descuento por cantidad para colegios y organizaciones.',
           cta: 'Pedir propuesta', nota: 'Te respondemos el mismo día',
           href: 'mailto:libro@creatuempresa.ai?subject=Pack%20aula'
         }
       ],
       faqs: [
         { q: '¿Para qué edad es?', a: 'Está pensado para chicos de 10 a 14. Y también es muy lindo leerlo y jugarlo en familia o con amigos.' },
-        { q: '¿Cuánto tarda el envío?', a: 'El impreso se despacha por Amazon con sus plazos y seguimiento. El digital llega al mail en el momento del pago.' },
-        { q: '¿Puedo pedir factura?', a: 'Sí. Escríbenos los datos fiscales después de comprar y te la emitimos.' },
-        { q: '¿Hay descuento por cantidad?', a: 'Sí. El descuento arranca a partir de 10 ejemplares, con el Pack aula y precio por ejemplar según la cantidad.' }
+        { q: '¿Hay descuento por cantidad?', a: 'Sí. El descuento arranca a partir de 10 ejemplares, con el Pack aula y precio por ejemplar según la cantidad.' },
+        { q: '¿Está disponible en otros idiomas?', a: 'Estamos trabajando en la traducción del libro a otros idiomas. Si le gustaría recibirlo en un idioma en particular, por favor escríbanos. Nos encantará conocer su interés y avisarle cuando esa versión esté disponible.' },
+        { q: '¿Es un libro inclusivo?', a: 'Sí. Fue pensado para que todos los niños puedan disfrutar la experiencia de jugar a crear su empresa, respetando sus tiempos, intereses y distintas maneras de aprender. Presenta explicaciones claras, apoyos visuales, actividades prácticas y un recorrido paso a paso. Su enfoque busca incluir a niños con diferentes perfiles de aprendizajes, como dislexia, discalculia, TEA, TDAH y perfiles 2E (doblemente excepcionales).' }
       ]
     };
   }

@@ -49,6 +49,7 @@
     image-slot { width: 76px !important; height: 76px !important; }
   }
 </style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#F3D22E"/><text x="30" y="115" font-size="60" font-family="sans-serif" fill="#33302B">CTE</text></svg></template>
 </helmet>
 
 <div style="width:100%;background:#F3D22E;">
@@ -131,21 +132,11 @@
         </div>
       </div>
       <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
-        <image-slot id="creator-pedro" shape="circle" src="creadores/creator-pedro.webp" placeholder="Foto de Pedro Flores" style="width:96px;height:96px;display:block;"></image-slot>
-        <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
-            <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Pedro Flores</h2>
-            <span style="background:#7A5AA5;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Animación</span>
-          </div>
-          <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Diseñar este proyecto fue una forma de ayudar a que más ideas encuentren cómo hacerse realidad. Nunca tuvimos un poder tan grande para dar forma a nuestro mundo como el que tenemos hoy. La educación y la tecnología juntas son una gran fuerza para el bien y un mundo mejor."</p>
-        </div>
-      </div>
-      <div data-reveal="" style="background:#FBF8F1;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,2.4vw,30px);align-items:start;transition:transform .25s,background .25s;" style-hover="transform:translateY(-4px);background:#FFFFFF;">
         <image-slot id="creator-agustin-catino" shape="circle" src="creadores/creator-agustin-catino.webp" placeholder="Foto de Agustín Catino" style="width:96px;height:96px;display:block;"></image-slot>
         <div style="min-width:0;display:flex;flex-direction:column;gap:9px;">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
             <h2 style="font-family:'Baloo 2',cursive;font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.1;">Agustín Catino</h2>
-            <span style="background:#35AEC1;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Marketing</span>
+            <span style="background:#7A5AA5;color:#FFFFFF;font-size:11px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;">Animación</span>
           </div>
           <p style="font-size:clamp(13.5px,1.05vw,14.5px);font-weight:400;line-height:1.55;color:#6B655C;text-wrap:pretty;">"Siempre me apasionó crear proyectos que ayuden a las personas a crecer. Participar en este libro es una forma de acercar el mundo del emprendimiento a los más chicos, despertando su curiosidad, creatividad y confianza para animarse a construir sus propias ideas."</p>
         </div>
@@ -307,9 +298,7 @@ class Component extends DCLogic {
           quote2: ' transforma conceptos administrativos, contables y financieros en herramientas simples y prácticas. Un gran aliado para impulsar su creatividad y su confianza para el día de mañana."' },
         { slot: 'creator-audrey', name: 'Audrey Ashby', role: 'Diseño', color: '#93C548', em: '', quote2: '',
           quote: '"Ser parte de este proyecto significó para mí la posibilidad de plasmar herramientas complejas pero necesarias en un soporte cercano y accesible, para que las ideas de los más chicos no se queden solo en imaginar. A la vez, fue reconocer en la curiosidad de los chicos que ya andan inventando cosas ese impulso que alguna vez me llevó a elegir un camino independiente en el mundo laboral."' },
-        { slot: 'creator-pedro', name: 'Pedro Flores', role: 'Animación', color: '#7A5AA5', em: '', quote2: '',
-          quote: '"Diseñar este proyecto fue una forma de ayudar a que más ideas encuentren cómo hacerse realidad. Nunca tuvimos un poder tan grande para dar forma a nuestro mundo como el que tenemos hoy. La educación y la tecnología juntas son una gran fuerza para el bien y un mundo mejor."' },
-        { slot: 'creator-agustin-catino', name: 'Agustín Catino', role: 'Marketing', color: '#35AEC1', em: '', quote2: '',
+        { slot: 'creator-agustin-catino', name: 'Agustín Catino', role: 'Animación', color: '#7A5AA5', em: '', quote2: '',
           quote: '"Siempre me apasionó crear proyectos que ayuden a las personas a crecer. Participar en este libro es una forma de acercar el mundo del emprendimiento a los más chicos, despertando su curiosidad, creatividad y confianza para animarse a construir sus propias ideas."' },
       ])
     };
@@ -320,7 +309,6 @@ class Component extends DCLogic {
       'creator-candelaria': { s: 1, x: 0, y: 0.526 },
       'creator-agustin': { s: 1.1527, x: 1.179, y: 5.796 },
       'creator-audrey': { s: 1, x: 0, y: 0 },
-      'creator-pedro': { s: 1, x: 0, y: 0 },
       'creator-vicky': { s: 1.3383, x: 5.815, y: 42.039 },
       'creator-mariela': { s: 2.0818, x: -28.61, y: 21.43 },
       'creator-agustin-catino': { s: 1.0536, x: -15.573, y: -2.682 }
