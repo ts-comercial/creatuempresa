@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F3D22E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F3D22E; color: #33302B; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, p { margin: 0; }
+  a { color: #33302B; text-decoration: none; }
+  a:hover { color: #E24C9A; }
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-9px) rotate(var(--r,0deg)); } }
+  @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+  @media (max-width:860px) {
+    html, body { overflow-x: hidden; }
+    section, footer { padding-left: 18px !important; padding-right: 18px !important; }
+    nav > div { padding: 10px 16px !important; gap: 10px !important; }
+    nav img { height: 42px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    footer div[style*="minmax(120px"] { grid-template-columns: repeat(2, 1fr) !important; gap: 22px 18px !important; }
+    footer > div > div:last-child { justify-content: center !important; text-align: center !important; }
+    div[data-drift] { width: 92px !important; opacity: .6 !important; }
+  }
+  @media (max-width:640px) {
+    nav > div > div { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="width:100%;background:#F3D22E;">
+
+<nav style="position:sticky;top:0;z-index:60;background:#F3D22E;">
+  <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="index.html" style="flex:none;display:flex;align-items:center;"><img src="personajes/logo.png" alt="Crea tu empresa" style="height:clamp(58px,6.4vw,86px);width:auto;object-fit:contain;display:block;"></a>
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.8vw,24px);font-size:clamp(12px,1.1vw,14px);font-weight:700;white-space:nowrap;">
+      <a href="index.html#about">Libro</a>
+      <a href="index.html#capitulos">Capítulos</a>
+      <a href="index.html#adentro">Contenido</a>
+      <a href="creadores.html">Creadores</a>
+    </div>
+    <a href="comprar.html" style="flex:none;background:#E24C9A;color:#FFFFFF;font-size:clamp(12px,1.1vw,14px);font-weight:800;padding:12px clamp(16px,1.8vw,24px);border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-2px);color:#FFFFFF;">Adquiere el libro</a>
+  </div>
+</nav>
+
+<section id="top" style="position:relative;padding:clamp(28px,4vw,60px) 28px clamp(24px,3vw,44px);overflow:hidden;">
+  <span style="position:absolute;left:9%;top:26%;width:14px;height:14px;background:#E24C9A;border-radius:50%;animation:twinkle 3.4s ease-in-out infinite;"></span>
+  <span style="position:absolute;right:13%;top:18%;width:10px;height:10px;background:#35AEC1;border-radius:50%;animation:twinkle 4.2s ease-in-out infinite .8s;"></span>
+  <span style="position:absolute;left:44%;top:8%;width:8px;height:8px;background:#F07E3C;border-radius:50%;animation:twinkle 3.8s ease-in-out infinite .4s;"></span>
+  <div style="max-width:900px;margin:0 auto;position:relative;text-align:center;display:flex;flex-direction:column;gap:clamp(14px,2vw,20px);align-items:center;">
+    <p style="background:#FFFFFF;font-size:clamp(11px,1vw,13px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:9px 20px;border-radius:999px;">Preguntas frecuentes</p>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;letter-spacing:-.02em;line-height:.98;font-size:clamp(38px,6.4vw,92px);text-shadow:0 5px 0 rgba(0,0,0,.07);">Antes de empezar</h1>
+  </div>
+</section>
+
+<section style="position:relative;background:#FAF5E9;padding:clamp(48px,6.5vw,96px) 28px;overflow:hidden;">
+  <div data-drift="x:-46,y:-24,rot:-5" style="position:absolute;right:-30px;bottom:2%;width:clamp(100px,12vw,180px);pointer-events:none;z-index:0;"><img src="personajes/gemini-1.png" alt="" style="width:100%;object-fit:contain;--r:0deg;animation:floaty 9.6s ease-in-out infinite;"></div>
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="background:#FFFFFF;border:3px solid #93C548;border-radius:30px;padding:clamp(22px,2.8vw,32px);display:flex;flex-direction:column;gap:12px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,24px);color:#33302B;line-height:1.2;">¿Para qué edad es?</h3>
+        <p style="font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.65;color:#6B655C;text-wrap:pretty;">Está pensado para chicos de 10 a 14. Y también es muy lindo leerlo y jugarlo en familia o con amigos.</p>
+      </div>
+      <div style="background:#FFFFFF;border:3px solid #E24C9A;border-radius:30px;padding:clamp(22px,2.8vw,32px);display:flex;flex-direction:column;gap:12px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,24px);color:#33302B;line-height:1.2;">¿Hay descuento por cantidad?</h3>
+        <p style="font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.65;color:#6B655C;text-wrap:pretty;">Sí. El descuento arranca a partir de 10 ejemplares, con el Pack aula y precio por ejemplar según la cantidad.</p>
+      </div>
+      <div style="background:#FFFFFF;border:3px solid #F07E3C;border-radius:30px;padding:clamp(22px,2.8vw,32px);display:flex;flex-direction:column;gap:12px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,24px);color:#33302B;line-height:1.2;">¿Está disponible en otros idiomas?</h3>
+        <p style="font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.65;color:#6B655C;text-wrap:pretty;">Estamos trabajando en la traducción del libro a otros idiomas.</p>
+        <p style="font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.65;color:#6B655C;text-wrap:pretty;">Si le gustaría recibirlo en un idioma en particular, por favor escríbanos. Nos encantará conocer su interés y avisarle cuando esa versión esté disponible.</p>
+        <a href="mailto:libro@creatuempresa.ai" style="align-self:flex-start;color:#E24C9A;font-size:15px;font-weight:800;" style-hover="color:#33302B;">libro@creatuempresa.ai</a>
+      </div>
+      <div style="background:#FFFFFF;border:3px solid #35AEC1;border-radius:30px;padding:clamp(22px,2.8vw,32px);display:flex;flex-direction:column;gap:12px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(19px,1.9vw,24px);color:#33302B;line-height:1.2;">¿Es un libro inclusivo?</h3>
+        <p style="font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.65;color:#6B655C;text-wrap:pretty;">Sí. Fue pensado para que todos los niños puedan disfrutar la experiencia de jugar a crear su empresa, respetando sus tiempos, intereses y distintas maneras de aprender. Presenta explicaciones claras, apoyos visuales, actividades prácticas y un recorrido paso a paso. Su enfoque busca incluir a niños con diferentes perfiles de aprendizajes, como dislexia, discalculia, TEA, TDAH y perfiles 2E (doblemente excepcionales).</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:clamp(28px,4vw,44px);">
+      <a href="comprar.html" style="background:#E24C9A;color:#FFFFFF;font-size:16px;font-weight:800;padding:18px 34px;border-radius:999px;box-shadow:0 5px 0 rgba(0,0,0,.14);transition:transform .18s;" style-hover="transform:translateY(-3px);color:#FFFFFF;">Adquiere el libro completo</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#6B655C;color:#FFFFFF;padding:clamp(44px,6vw,80px) 28px clamp(24px,3vw,34px);">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,4vw,52px);align-items:end;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Que empiece el juego</h2>
+        <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">¿Eres colegio, fundación o librería? Escríbenos y armamos una propuesta por cantidad.</p>
+        <a href="mailto:libro@creatuempresa.ai" style="color:#F3D22E;font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.ai</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2.4vw,32px);font-size:15px;font-weight:400;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Libro</p>
+          <a href="index.html#capitulos" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Capítulos</a>
+          <a href="index.html#adentro" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contenido</a>
+          <a href="creadores.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
+          <a href="comprar.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Digital e impreso</a>
+          <a href="mailto:libro@creatuempresa.ai?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Detrás</p>
+          <a href="preguntas-frecuentes.html" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Preguntas frecuentes</a>
+          <a href="mailto:libro@creatuempresa.ai" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px clamp(18px,3vw,44px);justify-content:center;text-align:center;border-top:1px solid #837C71;padding-top:20px;font-size:13px;font-weight:400;color:#D8D2C8;">
+      <p>Libro de educación financiera para chicos de 10 a 14 años</p>
+      <p>© 2026 Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+</body>
+</html>
