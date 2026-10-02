@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <script>(function(){var p=location.pathname,c=p.replace(/\/index\.html$/,"/").replace(/\.html$/,"");if(c!==p)history.replaceState(null,"",c+location.search+location.hash);})();</script>
 <meta charset="utf-8">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#F3D22E">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -41,22 +36,21 @@
     nav > div > div { display: none !important; }
   }
 </style>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#F3D22E"/><text x="30" y="115" font-size="60" font-family="sans-serif" fill="#33302B">CTE</text></svg></template>
 </helmet>
 
 <div style="width:100%;background:#F3D22E;">
 
 <nav style="position:sticky;top:0;z-index:60;background:#F3D22E;">
   <div style="max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-    <a href="/" style="flex:none;display:flex;align-items:center;"><img src="personajes/logo.png" alt="Crea tu empresa" style="height:clamp(58px,6.4vw,86px);width:auto;object-fit:contain;display:block;"></a>
+    <a href="/en/" style="flex:none;display:flex;align-items:center;"><img src="/personajes/logo-en.png" alt="Create Your Company" style="height:clamp(58px,6.4vw,86px);width:auto;object-fit:contain;display:block;"></a>
     <div style="display:flex;align-items:center;gap:clamp(12px,1.8vw,24px);font-size:clamp(12px,1.1vw,14px);font-weight:700;white-space:nowrap;">
-      <a href="/#about">El libro</a>
-      <a href="/#capitulos">Capítulos</a>
-      <a href="/#adentro">Contenido</a>
-      <a href="/creadores">Creadores</a>
-      <a href="/en/buy" style="border:2px solid #33302B;border-radius:999px;padding:4px 10px;">EN</a>
+      <a href="/en/#about">Book</a>
+      <a href="/en/#capitulos">Chapters</a>
+      <a href="/en/#adentro">Preview</a>
+      <a href="/en/creators">Creators</a>
+      <a href="/comprar" style="border:2px solid #33302B;border-radius:999px;padding:4px 10px;">ES</a>
     </div>
-    <a href="#elegir" style="flex:none;background:#E24C9A;color:#FFFFFF;font-size:clamp(12px,1.1vw,14px);font-weight:800;padding:12px clamp(16px,1.8vw,24px);border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-2px);color:#FFFFFF;">Adquiere el libro</a>
+    <a href="#elegir" style="flex:none;background:#E24C9A;color:#FFFFFF;font-size:clamp(12px,1.1vw,14px);font-weight:800;padding:12px clamp(16px,1.8vw,24px);border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .18s;" style-hover="transform:translateY(-2px);color:#FFFFFF;">Get the book</a>
   </div>
 </nav>
 
@@ -65,15 +59,15 @@
   <span style="position:absolute;right:14%;top:10%;width:10px;height:10px;background:#35AEC1;border-radius:50%;animation:twinkle 4.2s ease-in-out infinite .8s;"></span>
   <div style="max-width:1160px;margin:0 auto;position:relative;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);">
     <div style="text-align:center;max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
-      <p style="align-self:center;background:#FFFFFF;font-size:clamp(11px,1vw,13px);font-weight:800;padding:9px 18px;border-radius:999px;">Libro para chicos de 10 a 14 años</p>
-      <h1 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;letter-spacing:-.02em;line-height:1;font-size:clamp(36px,5.2vw,68px);text-shadow:0 4px 0 rgba(0,0,0,.07);">Elige tu formato</h1>
-      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:600;line-height:1.55;color:#4A463F;text-wrap:pretty;">Elige el plan que mejor te queda y te llevamos directo al lugar de compra.</p>
+      <p style="align-self:center;background:#FFFFFF;font-size:clamp(11px,1vw,13px);font-weight:800;padding:9px 18px;border-radius:999px;">A book for kids ages 10 to 14</p>
+      <h1 style="font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;letter-spacing:-.02em;line-height:1;font-size:clamp(36px,5.2vw,68px);text-shadow:0 4px 0 rgba(0,0,0,.07);">Choose your format</h1>
+      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:600;line-height:1.55;color:#4A463F;text-wrap:pretty;">Pick the plan that suits you best and we'll take you straight to checkout.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(14px,2vw,24px);align-items:stretch;">
       <sc-for list="{{ opciones }}" as="o" hint-placeholder-count="3">
         <div style="background:#FFFFFF;border-radius:30px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:16px;box-shadow:0 6px 0 rgba(0,0,0,.08);transition:transform .22s;" style-hover="transform:translateY(-6px);">
           <div style="border-radius:18px;overflow:hidden;background:#F6F3EC;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;">
-            <img src="paginas/Slide-16_9---1.jpg" alt="Tapa de Crea tu Empresa" style="width:100%;height:100%;object-fit:cover;">
+            <img src="/paginas/cover-en.png" alt="Create Your Company cover" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div style="display:flex;flex-direction:column;gap:6px;">
             <p style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:{{ o.color }};">{{ o.tag }}</p>
@@ -93,21 +87,21 @@
 <section style="position:relative;background:#FFFFFF;padding:clamp(52px,7vw,100px) 28px;overflow:hidden;">
   <div style="max-width:1160px;margin:0 auto;position:relative;">
     <div style="text-align:center;max-width:620px;margin:0 auto clamp(26px,3.5vw,44px);">
-      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:#E24C9A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">Qué recibes</p>
-      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;line-height:1.02;font-size:clamp(30px,4.2vw,54px);">Todo lo que viene con el libro</h2>
+      <p data-reveal="" style="font-size:clamp(12px,1.1vw,14px);font-weight:800;color:#E24C9A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">What you get</p>
+      <h2 data-reveal="" style="font-family:'Poppins',sans-serif;font-weight:600;line-height:1.02;font-size:clamp(30px,4.2vw,54px);">Everything that comes with the book</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
       <div data-reveal="" style="background:#F07E3C;color:#FFFFFF;border-radius:28px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:8px;">
-        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">6 capítulos</p>
-        <p style="font-size:15px;font-weight:600;line-height:1.55;">De la primera idea al patrimonio, con una actividad al final de cada uno.</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">6 chapters</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.55;">From the first idea to building wealth, with an activity at the end of each one.</p>
       </div>
       <div data-reveal="" style="background:#35AEC1;color:#FFFFFF;border-radius:28px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:8px;">
-        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">Ilustración original</p>
-        <p style="font-size:15px;font-weight:600;line-height:1.55;">Cada página ilustrada a mano por Mariela Rojkin. Un sinfín de inspiraciones de emprendimientos.</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">Original illustration</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.55;">Every page hand-illustrated. Endless business ideas for inspiration.</p>
       </div>
       <div data-reveal="" style="background:#7A5AA5;color:#FFFFFF;border-radius:28px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:8px;">
-        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">Actividades</p>
-        <p style="font-size:15px;font-weight:600;line-height:1.55;">Planillas para completar: precios, ventas, caja y presupuesto del negocio que imaginaste.</p>
+        <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;">Activities</p>
+        <p style="font-size:15px;font-weight:600;line-height:1.55;">Worksheets to fill in: prices, sales, cash and budget for the business you imagined.</p>
       </div>
     </div>
   </div>
@@ -116,14 +110,14 @@
 <div style="background:#6B655C;overflow:hidden;padding:clamp(20px,3vw,32px) 0;">
   <div style="display:flex;width:max-content;animation:parade 34s linear infinite;align-items:flex-end;gap:clamp(28px,4vw,60px);padding:0 30px;">
     <sc-for list="{{ desfile }}" as="d" hint-placeholder-count="18">
-      <img src="personajes/image34.png" data-src="{{ d.img }}" alt="" style="height:clamp(90px,11vw,150px);object-fit:contain;animation:walk {{ d.dur }} ease-in-out infinite {{ d.delay }};">
+      <img src="/personajes/image34.png" data-src="{{ d.img }}" alt="" style="height:clamp(90px,11vw,150px);object-fit:contain;animation:walk {{ d.dur }} ease-in-out infinite {{ d.delay }};">
     </sc-for>
   </div>
 </div>
 
 <section style="background:#F3D22E;padding:clamp(52px,7vw,100px) 28px;">
   <div style="max-width:820px;margin:0 auto;">
-    <h2 data-reveal="" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.02;font-size:clamp(30px,4.2vw,54px);text-shadow:0 4px 0 rgba(0,0,0,.07);margin-bottom:clamp(24px,3vw,40px);">Preguntas antes de comprar</h2>
+    <h2 data-reveal="" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:600;color:#FFFFFF;line-height:1.02;font-size:clamp(30px,4.2vw,54px);text-shadow:0 4px 0 rgba(0,0,0,.07);margin-bottom:clamp(24px,3vw,40px);">Questions before you buy</h2>
     <div style="display:flex;flex-direction:column;gap:12px;">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
         <div data-reveal="" style="background:#FFFFFF;border-radius:24px;padding:clamp(20px,2.4vw,26px);display:flex;flex-direction:column;gap:8px;">
@@ -139,43 +133,43 @@
   <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,4vw,52px);align-items:end;">
       <div style="display:flex;flex-direction:column;gap:14px;">
-        <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Que empiece el juego</h2>
-        <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">¿Eres colegio, fundación o librería? Escríbenos y armamos una propuesta por cantidad.</p>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:400;line-height:1;font-size:clamp(26px,3vw,40px);">Let the game begin</h2>
+        <p style="font-size:16px;font-weight:400;line-height:1.6;color:#CFC9BC;max-width:38ch;">Write to us for the printed edition and we'll put together a bulk offer.</p>
         <a href="mailto:libro@creatuempresa.ai" style="color:#F3D22E;font-size:17px;font-weight:400;" style-hover="color:#FFFFFF;">libro@creatuempresa.ai</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2.4vw,32px);font-size:15px;font-weight:400;">
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Libro</p>
-          <a href="/#capitulos" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Capítulos</a>
-          <a href="/#adentro" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contenido</a>
-          <a href="/creadores" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Book</p>
+          <a href="/en/#capitulos" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Chapters</a>
+          <a href="/en/#adentro" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Preview</a>
+          <a href="/en/creators" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creators</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Adquirir</p>
-          <a href="/comprar" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Planes</a>
-          <a href="mailto:libro@creatuempresa.ai?subject=Pack%20aula" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Pack aula</a>
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Buy</p>
+          <a href="/en/buy" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Plans</a>
+          <a href="mailto:libro@creatuempresa.ai?subject=Printed%20packs" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Printed packs</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Detrás</p>
-          <a href="/creadores" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creadores</a>
-          <a href="mailto:libro@creatuempresa.ai" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contacto</a>
+          <p style="font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#E3DED5;">Behind it</p>
+          <a href="/en/creators" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Creators</a>
+          <a href="mailto:libro@creatuempresa.ai" style="color:#FFFFFF;" style-hover="color:#F3D22E;">Contact</a>
         </div>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #837C71;padding-top:18px;max-width:none;">
-      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;"><strong style="font-weight:700;">Crea tu empresa</strong> es un libro de carácter exclusivamente educativo y didáctico. Su objetivo es acercar a niños y adolescentes conceptos básicos de emprendimiento, educación financiera, contabilidad y administración, promoviendo habilidades para la vida adulta en cuanto a creatividad y el pensamiento crítico.</p>
-      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;">Este libro no promueve ni incentiva el trabajo infantil. Por el contrario, reconoce y respeta el derecho de todos los niños, niñas y adolescentes a una infancia plena, al juego, a la educación y a su desarrollo integral, conforme a la legislación vigente y a la Convención sobre los Derechos del Niño.</p>
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;"><strong style="font-weight:700;">Create Your Company</strong> is a strictly educational book. Its goal is to introduce children and teenagers to the basics of entrepreneurship, financial education, accounting and management, building creativity and critical thinking skills for adult life.</p>
+      <p style="font-size:12px;font-weight:400;line-height:1.6;color:#CFC9BC;text-wrap:pretty;">This book does not promote or encourage child labor. On the contrary, it recognizes and respects the right of all children and teenagers to a full childhood, to play, to education and to their overall development, in accordance with current law and the Convention on the Rights of the Child.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:8px clamp(18px,3vw,44px);justify-content:center;text-align:center;border-top:1px solid #837C71;padding-top:20px;font-size:13px;font-weight:400;color:#D8D2C8;">
-      <p>Libro de educación financiera para chicos de 10 a 14 años</p>
-      <p>© 2026 Todos los derechos reservados</p>
+      <p>A financial education book for kids ages 10 to 14</p>
+      <p>© 2026 All rights reserved</p>
     </div>
   </div>
 </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;linkStripe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;precioDigital&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;},&quot;precioAnual&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:75,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;linkStripe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Enlaces&quot;},&quot;precioDigital&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:20,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;},&quot;precioAnual&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:50,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Precios&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
     this.io = new IntersectionObserver(entries => {
@@ -232,7 +226,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const p = this.props;
-    const desfileImgs = ['personajes/image34.png', 'personajes/cortando-pasto-web.png', 'personajes/veterinaria.png', 'personajes/pasteleria.png', 'personajes/amigas-veterinaria.png', 'personajes/gemini-1.png', 'personajes/nino-laptop.png', 'personajes/gemini-2.png', 'personajes/financiamiento.png'];
+    const desfileImgs = ['/personajes/image34.png', '/personajes/cortando-pasto-web.png', '/personajes/veterinaria.png', '/personajes/pasteleria.png', '/personajes/amigas-veterinaria.png', '/personajes/gemini-1.png', '/personajes/nino-laptop.png', '/personajes/gemini-2.png', '/personajes/financiamiento.png'];
 
     return {
       desfile: desfileImgs.concat(desfileImgs).map((img, i) => ({
@@ -242,32 +236,32 @@ class Component extends DCLogic {
       })),
       opciones: [
         {
-          nombre: 'Digital', tag: 'Llega al instante', color: '#35AEC1',
-          precio: 'USD ' + (p.precioDigital ?? 10) + ' / mes',
-          detalle: 'Acceso mensual al libro digital y sus actividades. Más impuestos.',
-          cta: 'Comprar ahora', nota: 'Pago seguro',
-          href: 'mailto:libro@creatuempresa.ai?subject=Digital%20mensual'
+          nombre: 'Digital', tag: 'Instant delivery', color: '#35AEC1',
+          precio: 'USD ' + (p.precioDigital ?? 20) + ' for 4 months',
+          detalle: '4 months of access to the digital book and its activities. Plus taxes.',
+          cta: 'Buy now', nota: 'Secure payment',
+          href: 'mailto:libro@creatuempresa.ai?subject=Digital%204%20months'
         },
         {
-          nombre: 'Anual', tag: 'El mejor precio', color: '#E24C9A',
-          precio: 'USD ' + (p.precioAnual ?? 75),
-          detalle: 'Un año completo de acceso al libro digital y sus actividades.',
-          cta: 'Comprar ahora', nota: 'Pago seguro',
-          href: 'mailto:libro@creatuempresa.ai?subject=Acceso%20anual'
+          nombre: 'Annual', tag: 'Best value', color: '#E24C9A',
+          precio: 'USD ' + (p.precioAnual ?? 50),
+          detalle: '12 months of access to the digital book and its activities.',
+          cta: 'Buy now', nota: 'Secure payment',
+          href: 'mailto:libro@creatuempresa.ai?subject=Annual%20access'
         },
         {
-          nombre: 'Pack aula', tag: 'Colegios y organizaciones', color: '#7A5AA5',
-          precio: 'Consultar',
-          detalle: 'Precio por alumno con descuento por cantidad para colegios y organizaciones.',
-          cta: 'Pedir propuesta', nota: 'Te respondemos el mismo día',
-          href: 'mailto:libro@creatuempresa.ai?subject=Pack%20aula'
+          nombre: 'Printed packs', tag: 'Schools, foundations and bookstores', color: '#7A5AA5',
+          precio: 'Contact us',
+          detalle: "Write to us for the printed edition and we'll put together a bulk offer.",
+          cta: 'Request a meeting', nota: 'We reply the same day',
+          href: 'mailto:libro@creatuempresa.ai?subject=Printed%20packs'
         }
       ],
       faqs: [
-        { q: '¿Para qué edad es?', a: 'Está pensado para chicos de 10 a 14. Y también es muy lindo leerlo y jugarlo en familia o con amigos.' },
-        { q: '¿Hay descuento por cantidad?', a: 'Sí. El descuento arranca a partir de 10 ejemplares, con el Pack aula y precio por ejemplar según la cantidad.' },
-        { q: '¿Está disponible en otros idiomas?', a: 'Estamos trabajando en la traducción del libro a otros idiomas. Si le gustaría recibirlo en un idioma en particular, por favor escríbanos. Nos encantará conocer su interés y avisarle cuando esa versión esté disponible.' },
-        { q: '¿Es un libro inclusivo?', a: 'Sí. Fue pensado para que todos los niños puedan disfrutar la experiencia de jugar a crear su empresa, respetando sus tiempos, intereses y distintas maneras de aprender. Presenta explicaciones claras, apoyos visuales, actividades prácticas y un recorrido paso a paso. Su enfoque busca incluir a niños con diferentes perfiles de aprendizajes, como dislexia, discalculia, TEA, TDAH y perfiles 2E (doblemente excepcionales).' }
+        { q: 'What age is it for?', a: 'It\'s designed for kids ages 10 to 14. It\'s also lovely to read and play together as a family or with friends.' },
+        { q: 'Are there bulk discounts?', a: 'Yes. Discounts start at 10 copies, with the Printed packs and a per-copy price based on quantity.' },
+        { q: 'Is it available in other languages?', a: 'We\'re working on translating the book into other languages. If you\'d like it in a particular language, please write to us. We\'d love to hear from you and let you know when that version is available.' },
+        { q: 'Is the book inclusive?', a: 'Yes. It was designed so every child can enjoy playing at creating their business, respecting their own pace, interests and ways of learning. It offers clear explanations, visual support, hands-on activities and a step-by-step path. Its approach aims to include children with different learning profiles, such as dyslexia, dyscalculia, autism (ASD), ADHD and 2E (twice-exceptional) profiles.' }
       ]
     };
   }
